@@ -1,0 +1,10 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {show: form_show}
+components:
+- type: Canvas
+  properties: {height: 100}
+  name: canvas
+  layout_properties: {grid_position: 'CTSJJN,UJYTUT'}
+is_package: true
