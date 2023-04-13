@@ -5,8 +5,5 @@ unique_ids:
   modules: {}
   server_modules: {}
   assets:
-    Treant.js: '1681232499121158674769494.2201'
-    frappe-gantt.css: '1681230487291956177083988.317'
-    frappe-gantt.min.js: '1681230458469668195288934.355'
     standard-page.html: HMVZUKYUGAT6NOXJNSROV6LEPXSKLM3P
     theme.css: HMBWJ2L6YXBWEFZPNMYT476FYINRNPUT

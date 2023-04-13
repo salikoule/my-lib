@@ -15,31 +15,31 @@ class Form2(Form2Template):
     # Any code you write here will run before the form opens.
 
   def form_show(self, **event_args):
-    gantt = anvil.js.get_dom_node(self.canvas)
+    gantt = anvil.js.get_dom_node(self.column_panel_1)
     tasks = [
       {
-    	id: 'Task 1',
-    	name: 'Redesign website',
-    	start: '2016-12-28',
-    	end: '2016-12-31',
-    	progress: 20,
-    	dependencies: 'Task 2, Task 3'
+    	'id': 'Task 1',
+    	'name': 'Redesign website',
+    	'start': '2016-12-28',
+    	'end': '2016-12-31',
+    	'progress': 20,
+    	'dependencies': 'Task 2, Task 3'
       },
       {
-    	id: 'Task 2',
-    	name: 'New login Page',
-    	start: '2016-12-28',
-    	end: '2016-12-31',
-    	progress: 50,
-    	dependencies: None
+    	'id': 'Task 2',
+    	'name': 'New login Page',
+    	'start': '2016-12-28',
+    	'end': '2016-12-31',
+    	'progress': 50,
+    	'dependencies': None
       },
       {
-    	id: 'Task 3',
-    	name: 'New theme',
-    	start: '2016-12-28',
-    	end: '2016-12-31',
-    	progress: 80,
-    	dependencies: None
+    	'id': 'Task 3',
+    	'name': 'New theme',
+    	'start': '2016-12-28',
+    	'end': '2016-12-31',
+    	'progress': 80,
+    	'dependencies': None
       }
     ]
     self.gantt_js = Gantt(gantt, tasks, {
