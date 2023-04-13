@@ -1,16 +1,14 @@
-from ._anvil_designer import Form2Template
+from ._anvil_designer import GanttChartTemplate
 from anvil import *
 from anvil.js.window import Gantt
 import anvil.js
 
-class Form2(Form2Template):
+class GanttChart(GanttChartTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    
-
-    #print(dir(anvil.js.window))
+    self.options = {}
 
     # Any code you write here will run before the form opens.
 
@@ -42,7 +40,7 @@ class Form2(Form2Template):
     	'dependencies': None
       }
     ]
-    self.gantt_js = Gantt(gantt, tasks, {
+    self.gantt = Gantt(gantt, tasks, {
     'header_height': 50,
     'column_width': 30,
     'step': 24,
@@ -55,5 +53,8 @@ class Form2(Form2Template):
     'date_format': 'YYYY-MM-DD',
     #'language': 'en', // or 'es', 'it', 'ru', 'ptBr', 'fr', 'tr', 'zh', 'de', 'hu',
     'custom_popup_html': None
-    })
+    },
+  #{'on_click': self.raise_event('on_click')}
+                      )
+    self.gantt.on('on_clicke')
 
