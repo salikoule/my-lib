@@ -56,5 +56,5 @@ class GanttChart(GanttChartTemplate):
     },
   #{'on_click': self.raise_event('on_click')}
                       )
-    self.gantt.on('on_clicke')
+    #self.gantt.on('on_click')
 
