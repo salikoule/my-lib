@@ -13,6 +13,7 @@ class GanttChart(GanttChartTemplate):
     # Any code you write here will run before the form opens.
 
   def form_show(self, **event_args):
+    self.column_panel_1.clear()
     gantt = anvil.js.get_dom_node(self.column_panel_1)
     tasks = [
       {
@@ -57,4 +58,8 @@ class GanttChart(GanttChartTemplate):
   #{'on_click': self.raise_event('on_click')}
                       )
     #self.gantt.on('on_click')
+
+  def link_click(self, **event_args):
+    self.gantt.change_view_mode(event_args['sender'].tag)
+
 
