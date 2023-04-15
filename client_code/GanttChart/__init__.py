@@ -41,25 +41,30 @@ class GanttChart(GanttChartTemplate):
     	'dependencies': None
       }
     ]
-    self.gantt = Gantt(gantt, tasks, {
-    'header_height': 50,
-    'column_width': 30,
-    'step': 24,
-    'view_modes': ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
-    'bar_height': 20,
-    'bar_corner_radius': 3,
-    'arrow_curve': 5,
-    'padding': 18,
-    'view_mode': 'Day',
-    'date_format': 'YYYY-MM-DD',
-    #'language': 'en', // or 'es', 'it', 'ru', 'ptBr', 'fr', 'tr', 'zh', 'de', 'hu',
-    'custom_popup_html': None
-    },
-  #{'on_click': self.raise_event('on_click')}
+    self.gantt = Gantt(gantt, tasks,
+    #  {
+    # 'header_height': 50,
+    # 'column_width': 30,
+    # 'step': 24,
+    # 'view_modes': ['Quarter Day', 'Half Day', 'Day', 'Week', 'Month'],
+    # 'bar_height': 20,
+    # 'bar_corner_radius': 3,
+    # 'arrow_curve': 5,
+    # 'padding': 18,
+    # 'view_mode': 'Day',
+    # 'date_format': 'YYYY-MM-DD',
+    # #'language': 'en', // or 'es', 'it', 'ru', 'ptBr', 'fr', 'tr', 'zh', 'de', 'hu',
+    # 'custom_popup_html': None
+    # },
+    {'on_click': self.on_click}
                       )
     #self.gantt.on('on_click')
 
   def link_click(self, **event_args):
     self.gantt.change_view_mode(event_args['sender'].tag)
+
+  def on_click(self, task):
+    print(task)
+    
 
 
