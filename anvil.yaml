@@ -12,5 +12,8 @@ metadata: {title: My Components Library}
 startup_form: null
 native_deps: {head_html: '<script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.css">'}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shortid/2.2.16/index.js"></script>'}
 renamed: true
