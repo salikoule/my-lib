@@ -1,7 +1,26 @@
 properties: []
 is_package: true
 events:
-- {name: on_click, default_event: true}
+- name: on_click
+  default_event: true
+  parameters:
+  - {name: task}
+  description: When a task is double clicked
+- name: on_date_change
+  parameters:
+  - {name: task}
+  - {name: start}
+  - {name: end}
+  description: When a task's date is changed
+- name: on_progress_change
+  parameters:
+  - {name: task}
+  - {name: progress}
+  description: When a task's  progress is change
+- name: on_view_change
+  parameters:
+  - {name: mode}
+  description: When gantt's view is changed
 custom_component: true
 components:
 - type: FlowPanel

@@ -17,6 +17,13 @@ class Form1(Form1Template):
   # def form_show(self, **event_args):
   #   self.gantt_chart_1.add_event_handler('x-on_click', self.on_click)
 
-  def gantt_chart_1_on_click(self, **event_args):
-    print(event_args['sender'])
+  def gantt_chart_1_on_click(self, task, **event_args):
+    print('------>',task)
+
+  def gantt_chart_1_on_date_change(self, task, start, end, **event_args):
+    pass
+
+
+
+
 
