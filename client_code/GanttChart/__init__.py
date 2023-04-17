@@ -91,7 +91,7 @@ class GanttChart(GanttChartTemplate):
     {'on_click': self.on_click, 'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change,}
                       )
     #self.gantt.on('on_click')
-    #print(dict(self.gantt))
+    print(dict(self.gantt))
 
   def link_click(self, **event_args):
     self.gantt.change_view_mode(event_args['sender'].tag)
@@ -100,13 +100,13 @@ class GanttChart(GanttChartTemplate):
     self.raise_event('on_click', task=task)
 
   def on_date_change(self, task, start, end):
-    self.raise_event('on_click', task=task, start=start, end=end)
+    self.raise_event('on_date_change', task=task, start=start, end=end)
 
   def on_progress_change(self, task, progress):
-    self.raise_event('on_click', task=task, progress=progress)
+    self.raise_event('on_progress_change', task=task, progress=progress)
 
   def on_view_change(self, mode):
-    self.raise_event('on_click', mode=mode)
+    self.raise_event('on_view_change', mode=mode)
     
 
 
