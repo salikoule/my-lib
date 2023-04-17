@@ -1,4 +1,9 @@
-properties: []
+properties:
+- name: view_mode
+  type: enum
+  default_value: Quarter Day
+  default_binding_prop: true
+  options: [Quarter Day, Half Day, Day, Week, Month]
 is_package: true
 events:
 - name: on_click
