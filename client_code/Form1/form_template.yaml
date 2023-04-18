@@ -15,6 +15,10 @@ components:
     layout_properties: {grid_position: 'DMIBXV,EXEQDT'}
     event_bindings: {on_click: gantt_chart_1_on_click, on_date_change: gantt_chart_1_on_date_change,
       on_progress_change: gantt_chart_1_on_progress_change}
+  - type: form:FullCalendar_
+    properties: {}
+    name: full_calendar__1
+    layout_properties: {grid_position: 'DMIBXV,IYOQGI'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
