@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: FullCalendar_}
+startup: {type: module, module: nanoid}
 package_name: My_Lib
 allow_embedding: false
 name: My Lib
@@ -20,5 +20,8 @@ native_deps: {head_html: '<script src="https://cdnjs.cloudflare.com/ajax/libs/fr
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js"></script>'}
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/nanoid/nanoid.js"></script>'}
 renamed: true

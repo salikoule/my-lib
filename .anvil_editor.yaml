@@ -4,7 +4,8 @@ unique_ids:
     FullCalendar_: '1681812469127649097059989.5072'
     GanttChart: '1681229379839719469932924.2711'
     TimePicker: '1681893839634862013265589.6046'
-  modules: {}
+  modules:
+    nanoid: '1681919200026682233176853.654'
   server_modules: {}
   assets:
     standard-page.html: HMVZUKYUGAT6NOXJNSROV6LEPXSKLM3P
