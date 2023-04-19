@@ -1,0 +1,29 @@
+properties:
+- {name: hour, type: number, default_value: '', default_binding_prop: true}
+- {name: error_color, type: color, default_value: '#ff0000'}
+- {name: default_color, type: color, default_value: '#000000'}
+- {name: use_background_for_error, type: boolean, default_value: false}
+- {name: minutes, type: number, default_value: ''}
+is_package: true
+events:
+- {name: pressed_enter, default_event: true}
+- {name: change}
+- {name: lost_focus}
+custom_component: true
+components:
+- type: TextBox
+  properties: {role: outlined, align: right, hide_text: false, tooltip: '', placeholder: '00:00',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: time_input
+  layout_properties:
+    col_widths: {}
+    grid_position: CJDNJN,IBNRWM
+    full_width_row: true
+  event_bindings: {lost_focus: time_input_lost_focus, change: time_input_change, pressed_enter: time_input_pressed_enter}
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none,
+    background: ''}

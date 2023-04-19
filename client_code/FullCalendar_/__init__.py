@@ -16,7 +16,8 @@ class FullCalendar_(FullCalendar_Template):
     self.calendar = FullCalendar.Calendar(
       calendar, 
       {
-        'initialView': 'dayGridMonth',
+        #'initialView': 'dayGridMonth',
+        'initialView': 'resourceTimeGridDay',
         'selectable': True,
         'firstDay':1,
         'dateClick':self.date_click,
@@ -41,7 +42,6 @@ class FullCalendar_(FullCalendar_Template):
     
 
   def date_click(self, info):
-    #alert(info['dateStr'])
     print(info)
     info.dayEl.style.backgroundColor = 'red'
 
