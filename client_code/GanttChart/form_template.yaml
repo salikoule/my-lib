@@ -85,6 +85,11 @@ components:
     data_bindings:
     - {property: tag, code: '''Month'''}
     event_bindings: {click: link_click}
+  - type: Button
+    properties: {text: button_1}
+    name: button_1
+    layout_properties: {}
+    event_bindings: {click: button_1_click}
 - type: ColumnPanel
   properties: {}
   name: column_panel_1

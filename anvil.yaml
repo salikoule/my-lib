@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: module, module: nanoid}
+startup: {type: form, module: Form1}
 package_name: My_Lib
 allow_embedding: false
 name: My Lib

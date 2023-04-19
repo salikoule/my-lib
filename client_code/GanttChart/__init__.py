@@ -7,15 +7,12 @@ class GanttChart(GanttChartTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
     self.options = {}
-
-    # Any code you write here will run before the form opens.
 
   def form_show(self, **event_args):
     self.column_panel_1.clear()
     gantt = anvil.js.get_dom_node(self.column_panel_1)
-    tasks = [
+    self.tasks = [
 			{
 				'start': '2018-10-01',
 				'end': '2018-10-08',
@@ -72,8 +69,8 @@ class GanttChart(GanttChartTemplate):
 			# 	'progress': 0
 			# }
 		]
-    #print(dir(Gantt))
-    self.gantt = Gantt(gantt, tasks,
+    print(dir(Gantt))
+    self.gantt = Gantt(gantt, self.tasks,
     #  {
     # 'header_height': 50,
     # 'column_width': 30,
@@ -91,7 +88,7 @@ class GanttChart(GanttChartTemplate):
     {'on_click': self.on_click, 'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change,}
                       )
     #self.gantt.on('on_click')
-    print(dict(self.gantt))
+    #print(dict(self.gantt))
 
   def link_click(self, **event_args):
     self.gantt.change_view_mode(event_args['sender'].tag)
@@ -107,6 +104,20 @@ class GanttChart(GanttChartTemplate):
 
   def on_view_change(self, mode):
     self.raise_event('on_view_change', mode=mode)
+
+  def button_1_click(self, **event_args):
+    self.tasks.append({
+				'start': '2018-10-13',
+				'end': '2018-10-15',
+				'name': 'NOooooo Go Live!',
+				'id': "Task 6",
+				'progress': 20,
+				'dependencies': 'Task 5',
+				'custom_class': 'bar-milestone'
+			})
+    self.gantt.setup_tasks(self.tasks)
+    self.gantt.change_view_mode()
+
     
 
 
