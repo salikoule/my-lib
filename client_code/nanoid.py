@@ -9,7 +9,7 @@ class NANOID(str):
         pass
 
     def __repr__(self):
-        return "nanoid('" + self + "')"
+        return "NANOID('" + self + "')"
 
 def nanoid(num=11):
     """Returns a nanoid of default 11 characters. Argument num is to specify the number of characters to return"""

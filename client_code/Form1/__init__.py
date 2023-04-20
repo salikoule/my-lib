@@ -8,6 +8,7 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
     #self.gantt_chart_1.add_tasks()
     # self.gantt_chart_1.add_event_handler('x-on_click', self.on_click)
     
