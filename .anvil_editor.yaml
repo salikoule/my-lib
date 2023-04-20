@@ -5,7 +5,8 @@ unique_ids:
     GanttChart: '1681229379839719469932924.2711'
     TimePicker: '1681893839634862013265589.6046'
   modules:
-    nanoid: '1681919200026682233176853.654'
+    __nanoid__: '1681919200026682233176853.654'
+    nanoid: '1681959305415668730954887.6808'
   server_modules: {}
   assets:
     standard-page.html: HMVZUKYUGAT6NOXJNSROV6LEPXSKLM3P

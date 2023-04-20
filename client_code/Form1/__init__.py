@@ -1,5 +1,6 @@
 from ._anvil_designer import Form1Template
 from anvil import *
+from .. import nanoid
 
 import anvil.js
 

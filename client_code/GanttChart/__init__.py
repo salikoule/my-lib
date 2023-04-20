@@ -69,7 +69,7 @@ class GanttChart(GanttChartTemplate):
 			# 	'progress': 0
 			# }
 		]
-    print(dir(Gantt))
+    #print(dir(Gantt))
     self.gantt = Gantt(gantt, self.tasks,
     #  {
     # 'header_height': 50,
