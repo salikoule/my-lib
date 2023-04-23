@@ -9,9 +9,6 @@ class GanttChart(GanttChartTemplate):
     self.init_components(**properties)
     self.events = {'on_click': self.on_click, 'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change}
     self.tasks = []
-    self.column_panel_1.clear()
-    panel = anvil.js.get_dom_node(self.column_panel_1)
-    self.gantt = Gantt(panel, self.tasks, {'view_mode': self.view_mode}, self.events)
 
   @property
   def view_mode(self):
@@ -28,16 +25,19 @@ class GanttChart(GanttChartTemplate):
   @tasks.setter
   def tasks(self, t):
     self._tasks = t
+    try:
+      self.refresh()
+    except:
+      print('error')
 
   def refresh(self):
     self.gantt.setup_tasks(self.tasks)
     self.gantt.change_view_mode()
 
   def form_show(self, **event_args):
-    self.gantt.render()
-    # self.column_panel_1.clear()
-    # panel = anvil.js.get_dom_node(self.column_panel_1)
-    # self.gantt = Gantt(panel, self.tasks, {'view_mode': self.view_mode}, self.events)
+    self.column_panel_1.clear()
+    panel = anvil.js.get_dom_node(self.column_panel_1)
+    self.gantt = Gantt(panel, self.tasks, {'view_mode': self.view_mode}, self.events)
     
     #  {
     # 'header_height': 50,

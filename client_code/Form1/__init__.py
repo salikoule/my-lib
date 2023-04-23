@@ -82,9 +82,6 @@ class Form1(Form1Template):
 				'custom_class': 'bar-milestone'
 			})
     self.gantt_chart_1.tasks = self.tasks
-    self.gantt_chart_1.refresh()
-    #self.gantt.setup_tasks(self.tasks)
-    #self.gantt.change_view_mode()
 
 
 
