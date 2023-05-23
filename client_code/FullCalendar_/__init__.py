@@ -16,7 +16,8 @@ class FullCalendar_(FullCalendar_Template):
     self.calendar = FullCalendar.Calendar(
       calendar, 
       {
-        'initialView': 'dayGridMonth',
+        'initialView': 'multiMonthYear',
+        #'initialView': 'dayGridMonth',
         #'initialView': 'resourceTimeGridDay',
         'selectable': True,
         'firstDay':1,
