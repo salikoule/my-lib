@@ -9,6 +9,7 @@ class GanttChart(GanttChartTemplate):
     self.init_components(**properties)
     self.events = {'on_click': self.on_click, 'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change}
     self.tasks = []
+    print(dir(anvil.js.window))
 
   @property
   def view_mode(self):
