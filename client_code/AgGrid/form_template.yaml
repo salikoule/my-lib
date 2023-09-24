@@ -1,0 +1,31 @@
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
+components:
+- type: FlowPanel
+  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
+    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+  name: flow_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: WTDBSB,IYXVBC
+    full_width_row: true
+is_package: true
+custom_component: true
+properties:
+- {name: height, type: number, default_binding_prop: true, important: true, default_value: 500}
+- name: theme
+  type: enum
+  important: true
+  options: [ag-theme-material, ag-theme-alpine, ag-theme-alpine-dark, ag-theme-balham,
+    ag-theme-balham-dark]
+  default_value: ag-theme-material
+- {name: grid_options, type: object, important: true}
+- {name: pagination, type: boolean, default_value: true, important: true}
+- {name: pagination_page_size, type: number, important: true, default_value: 25}
+- {name: sidebar, type: boolean, important: true, default_value: true}
+- name: row_selection
+  type: enum
+  important: true
+  options: [single, multiple]
+  default_value: single

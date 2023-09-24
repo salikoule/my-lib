@@ -1,9 +1,9 @@
-from ._anvil_designer import FullCalendar_Template
+from ._anvil_designer import CalendarTemplate
 from anvil import *
 from anvil.js.window import FullCalendar
 import anvil.js
 
-class FullCalendar_(FullCalendar_Template):
+class Calendar(CalendarTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
