@@ -27,8 +27,6 @@ class AgGrid(AgGridTemplate):
                     }}
     self.init_components(**properties)
     self.grid_id = str(uuid.uuid4())
-    print('hello')
-    print('hello to you too')
 
   @property
   def height(self):
