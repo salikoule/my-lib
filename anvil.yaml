@@ -31,7 +31,7 @@ native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/f
     ></script><!-- Warning -->\n\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/marker@latest\"\
     ></script><!-- Marker -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest\"\
     ></script><!-- Inline Code -->\n\n    <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest\"\
-    ></script>\n\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js\"\
+    ></script>\n\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.js\"\
     ></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css\"\
     ></script>\n"}
 renamed: true
