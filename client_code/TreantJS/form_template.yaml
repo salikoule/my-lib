@@ -1,0 +1,11 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {show: form_show}
+components:
+- type: FlowPanel
+  properties: {}
+  name: flow_panel
+  layout_properties: {grid_position: 'TRVGYH,GFWAOM'}
+is_package: true
+custom_component: true

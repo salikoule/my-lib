@@ -4,7 +4,7 @@ unique_ids:
     GanttChart: '1681229379839719469932924.2711'
     _TestForm: ASCRJSO33UREZVYORHWPSRS7WBDJSSNZ
     AgGrid: '169554084376577960300478.44638'
-    Treant: '1695613469123209505630430.17035'
+    TreantJS: '1695613469123209505630430.17035'
     TimePicker: '1681893839634862013265589.6046'
     Calendar: '1681812469127649097059989.5072'
   modules:
@@ -12,5 +12,14 @@ unique_ids:
     nanoid: '1681959305415668730954887.6808'
   server_modules: {}
   assets:
-    standard-page.html: HMVZUKYUGAT6NOXJNSROV6LEPXSKLM3P
     theme.css: HMBWJ2L6YXBWEFZPNMYT476FYINRNPUT
+    vendor/jquery.easing.js: '1695697459338537551994802.74365'
+    vendor/jquery.min.js: '1695697489249917786857926.8472'
+    vendor/raphael.js: '1695697512204299084183982.1479'
+    standard-page.html: HMVZUKYUGAT6NOXJNSROV6LEPXSKLM3P
+    Treant.js: '169569724943719875885257.45654'
+    vendor/jquery.mousewheel.js: '1695697503056750623899063.4562'
+    vendor/perfect-scrollbar/.gitkeep: '169569755414389561968903.65065'
+    vendor/perfect-scrollbar/perfect-scrollbar.js: '1695697607586193188695980.04663'
+    vendor/.gitkeep: '16956974397303829823816.017264'
+    vendor/perfect-scrollbar/perfect-scrollbar.css: '1695697598673250187179816.51828'
