@@ -31,8 +31,8 @@ native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/f
     ></script><!-- Warning -->\n\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/marker@latest\"\
     ></script><!-- Marker -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest\"\
     ></script><!-- Inline Code -->\n\n    <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest\"\
-    ></script>\n\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.js\"\
-    ></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css\"\
+    ></script>\n\n\n\n<!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.js\"\
+    ></script>-->\n<script src=\"_/theme/Treant.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css\"\
     ></script>\n<script src=\"_/theme/vendor/raphael.js\"></script>\n<link href=\"\
     _/theme/vendor/perfect-scrollbar/perfect-scrollbar.css\" rel=\"stylesheet\" type=\"\
     text/css\"/>\n<script src=\"_/theme/vendor/jquery.min.js\"></script>\n<script\

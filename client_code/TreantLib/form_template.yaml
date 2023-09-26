@@ -1,0 +1,6 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '<div id="treeSimple" style="width:1300px;"> </div>'}
+components: []
+is_package: true

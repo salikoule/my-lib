@@ -5,6 +5,7 @@ import anvil.server
 from anvil.js.window import Treant
 import anvil.js
 import json
+from ..TreantLib import TreantLib
 
 class TreantJS(TreantJSTemplate):
   def __init__(self, **properties):
@@ -15,8 +16,9 @@ class TreantJS(TreantJSTemplate):
 
   def form_show(self, **event_args):
     #self.canvas.clear()
-    panel = anvil.js.get_dom_node(self.flow_panel)
-    panel.innerHTML = f'<div id="treeSimple" style="width:500px; height: 500px;"> </div>'
+    # panel = anvil.js.get_dom_node(self.flow_panel)
+    # panel.innerHTML = f'<div id="treeSimple" style="width:500px; height: 500px;"> </div>'
+    self.flow_panel.add_component(TreantLib())
     simple_chart_config = {}
     simple_chart_config['chart']= {
         'container': '#treeSimple',
