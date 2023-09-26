@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestFormTemplate
 from anvil import *
+import anvil.server
 from .. import nanoid
 
 import anvil.js

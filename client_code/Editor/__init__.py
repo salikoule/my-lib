@@ -1,5 +1,6 @@
 from ._anvil_designer import EditorTemplate
 from anvil import *
+import anvil.server
 from anvil.js.window import EditorJS
 from anvil.js.window import Header
 from anvil.js.window import Quote

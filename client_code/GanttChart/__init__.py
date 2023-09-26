@@ -1,5 +1,6 @@
 from ._anvil_designer import GanttChartTemplate
 from anvil import *
+import anvil.server
 from anvil.js.window import Gantt
 import anvil.js
 

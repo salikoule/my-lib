@@ -1,8 +1,10 @@
 from ._anvil_designer import TreantJSTemplate
 from anvil import *
+import anvil.server
 
 from anvil.js.window import Treant
 import anvil.js
+import json
 
 class TreantJS(TreantJSTemplate):
   def __init__(self, **properties):
@@ -37,17 +39,20 @@ class TreantJS(TreantJSTemplate):
                 "stroke": "#ccc"
             }
             }}
-    simple_chart_config['nodeStructure'] = {
-        'text': { 'name': "Parent node" },
-        'children': [
-            {
-                'text': { 'name': "First child" }
-            },
-            {
-                'text': { 'name': "Second child" }
-            }
-        ]
-    }
+    data = anvil.server.call('get_tree')
+    rows=json.loads(data)
+    simple_chart_config['nodeStructure'] = rows
+    # simple_chart_config['nodeStructure'] = {
+    #     'text': { 'name': "Parent node" },
+    #     'children': [
+    #         {
+    #             'text': { 'name': "First child" }
+    #         },
+    #         {
+    #             'text': { 'name': "Second child" }
+    #         }
+    #     ]
+    # }
     # simple_chart_config = {
     #     'chart': {
     #         'container': "#treeSimple",

@@ -1,5 +1,6 @@
 from ._anvil_designer import CalendarTemplate
 from anvil import *
+import anvil.server
 from anvil.js.window import FullCalendar
 import anvil.js
 

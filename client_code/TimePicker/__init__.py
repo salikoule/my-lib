@@ -1,5 +1,6 @@
 from ._anvil_designer import TimePickerTemplate
 from anvil import *
+import anvil.server
 
 class TimePicker(TimePickerTemplate):
   def __init__(self, **properties):

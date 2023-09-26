@@ -1,3 +1,4 @@
+import anvil.server
 import anvil.js
 __js_nanoid = anvil.js.import_from('https://cdnjs.cloudflare.com/ajax/libs/nanoid/4.0.2/nanoid.min.js')
 
