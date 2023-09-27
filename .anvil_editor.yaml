@@ -14,6 +14,7 @@ unique_ids:
   server_modules:
     ServerModule1: '1695706799144769461957325.5131'
   assets:
+    Treant.css: '1695776518781574158178627.1426'
     theme.css: HMBWJ2L6YXBWEFZPNMYT476FYINRNPUT
     vendor/jquery.easing.js: '1695697459338537551994802.74365'
     vendor/jquery.min.js: '1695697489249917786857926.8472'

@@ -1,29 +1,28 @@
 from ._anvil_designer import TreantJSTemplate
 from anvil import *
 import anvil.server
-
 from anvil.js.window import Treant
 import anvil.js
 import json
-from ..TreantLib import TreantLib
+import uuid
 
 class TreantJS(TreantJSTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+    self.treant = Treant
+    self.tree_id = str(uuid.uuid4())
 
   def form_show(self, **event_args):
-    #self.canvas.clear()
-    # panel = anvil.js.get_dom_node(self.flow_panel)
-    # panel.innerHTML = f'<div id="treeSimple" style="width:500px; height: 500px;"> </div>'
-    self.flow_panel.add_component(TreantLib())
+    self.flow_panel.clear()
+    panel = anvil.js.get_dom_node(self.flow_panel)
+    panel.innerHTML = f'<div id="{self.tree_id}" style="width:500px; height: 500px;"> </div>'
     simple_chart_config = {}
     simple_chart_config['chart']= {
-        'container': '#treeSimple',
-        'rootOrientation': 'SOUTH',
-        'nodeAlign':'BOTTOM',
+        'container': f'#{self.tree_id}',
+        'rootOrientation': 'NORTH',
+        'nodeAlign':'CENTER',
         'levelSeparation':    100,
         'siblingSeparation':  20,
         'subTeeSeparation':   20,
@@ -35,80 +34,29 @@ class TreantJS(TreantJSTemplate):
           'connectorsSpeed': 1200
         },
         'connectors': {
-            'type': "curve",
+            'type': "step",
             'style': {
                 "stroke-width": 2,
                 "stroke": "#ccc"
             }
-            }}
-    data = anvil.server.call('get_tree')
-    rows=json.loads(data)
-    simple_chart_config['nodeStructure'] = rows
-    # simple_chart_config['nodeStructure'] = {
-    #     'text': { 'name': "Parent node" },
-    #     'children': [
-    #         {
-    #             'text': { 'name': "First child" }
-    #         },
-    #         {
-    #             'text': { 'name': "Second child" }
-    #         }
-    #     ]
-    # }
-    # simple_chart_config = {
-    #     'chart': {
-    #         'container': "#treeSimple",
+            },
+     }
 
-    #         'animateOnInit': True,
-            
-    #         'node': {
-    #             'collapsable': True
-    #         },
-    #         'animation': {
-    #             'nodeAnimation': "easeOutBounce",
-    #             'nodeSpeed': 700,
-    #             'connectorsAnimation': "bounce",
-    #             'connectorsSpeed': 700
-    #         }
-    #     },
-    #     'nodeStructure': {
-    #         'children': [
-    #             {
-    #                 'collapsed': True,
-    #                 'children': [
-    #                     {
-    #                         'name': 'Child 1'
-    #                     }
-    #                 ]
-    #             },
-    #             {
-    #                 #image: "img/sterling.png",
-    #                 'childrenDropLevel': 1,
-    #                 'children': [
-    #                     {
-    #                         'name': 'Child '
-    #                         #image: "img/woodhouse.png"
-    #                     }
-    #                 ]
-    #             },
-    #             {
-    #                 'pseudo': True,
-    #                 'children': [
-    #                     {
-    #                         'name': 'Child 3'
-    #                         #image: "img/cheryl.png"
-    #                     },
-    #                     {
-    #                         'name': 'Child 4'
-    #                         #image: "img/pam.png"
-    #                     }
-    #                 ]
-    #             }
-    #         ]
-    #     }
-    # }
-    self.treant = Treant
+    simple_chart_config['nodeStructure'] = {
+        'text': { 'name': "Parent node" },
+        'children': [
+            {
+                'text': { 'name': "First child" }
+            },
+            {
+                'text': { 'name': "Second child" }
+            }
+        ]
+    }
+    
     self.treant(simple_chart_config)
     
           
-
+  def on_toggle_collapse_finished(self, args):
+    print('ok')
+    print(args)
