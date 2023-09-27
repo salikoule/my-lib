@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: TreantJS}
+startup: {type: form, module: _TestTreant}
 package_name: My_Lib
 allow_embedding: false
 name: My Lib
@@ -34,5 +34,9 @@ native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/f
     ></script>\n\n\n\n<!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.js\"\
     ></script>-->\n<link rel=\"stylesheet\" href=\"_/theme/Treant.css\" type=\"text/css\"\
     />\n<script src=\"_/theme/vendor/raphael.js\"></script>\n<script src=\"_/theme/Treant.js\"\
+    ></script>\n\n\n<!-- include this files if \"fancy\" is set -->\n<link href=\"\
+    _/theme/vendor/perfect-scrollbar/perfect-scrollbar.css\" rel=\"stylesheet\" type=\"\
+    text/css\"/>\n<script src=\"_/theme/vendor/jquery.min.js\"></script>\n<script\
+    \ src=\"_/theme/vendor/jquery.mousewheel.js\"></script>\n<script src=\"_/theme/vendor/perfect-scrollbar/perfect-scrollbar.js\"\
     ></script>\n\n"}
 renamed: true
