@@ -54,6 +54,14 @@ class TreantJS(TreantJSTemplate):
   def connectors(self, c):
     self._connectors = c
 
+  @property
+  def node_structure(self):
+    return self._node_structure
+  
+  @node_structure.setter
+  def node_structure(self, ns):
+    self._node_structure = c
+
   def form_show(self, **event_args):
     self.flow_panel.clear()
     panel = anvil.js.get_dom_node(self.flow_panel)
