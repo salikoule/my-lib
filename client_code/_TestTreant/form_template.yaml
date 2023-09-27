@@ -11,7 +11,7 @@ components:
   name: button_1
   layout_properties: {grid_position: 'IBYEFI,YOLZBH'}
   event_bindings: {click: button_1_click}
-- type: form:TreantJS
+- type: form:Components.TreantJS
   properties: {root_orientation: WEST, node_align: BOTTOM, connectors: curve, scrollbar: fancy,
     height: 200, width: 300, animate_on_init: false}
   name: treant_js_1

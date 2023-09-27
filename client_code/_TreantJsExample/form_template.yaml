@@ -3,7 +3,7 @@ container:
   properties: {col_widths: '{}'}
   event_bindings: {show: form_show}
 components:
-- type: form:TreantJS
+- type: form:Components.TreantJS
   properties: {root_orientation: WEST, node_align: CENTER, connectors: curve, scrollbar: None,
     height: 800, width: 1920, animate_on_init: true}
   name: treant_js_1

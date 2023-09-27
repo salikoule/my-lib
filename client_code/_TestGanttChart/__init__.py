@@ -1,14 +1,17 @@
-from ._anvil_designer import _TestAgGridTemplate
+from ._anvil_designer import _TestGanttChartTemplate
 from anvil import *
 import anvil.server
 from .. import nanoid
-
+from .Form1 import Form1
 import anvil.js
 
-class _TestAgGrid(_TestAgGridTemplate):
+class _TestGanttChart(_TestGanttChartTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
+
+  def form_show(self, **event_args):
     self.gantt_chart_1.tasks = self.tasks = [
 			{
 				'start': '2018-10-01',
@@ -66,11 +69,6 @@ class _TestAgGrid(_TestAgGridTemplate):
 			# 	'progress': 0
 			# }
 		]
-    
-    
-
-  def form_show(self, **event_args):
-    pass
 
   def button_1_click(self, **event_args):
     self.tasks.append({
@@ -83,6 +81,7 @@ class _TestAgGrid(_TestAgGridTemplate):
 				'custom_class': 'bar-milestone'
 			})
     self.gantt_chart_1.tasks = self.tasks
+
 
 
 

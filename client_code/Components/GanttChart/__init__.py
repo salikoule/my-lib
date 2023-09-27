@@ -3,13 +3,20 @@ from anvil import *
 import anvil.server
 from anvil.js.window import Gantt
 import anvil.js
+from ..._TestGanttChart.Form1 import Form1
 
 class GanttChart(GanttChartTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.tasks = self.panel = None
+    self.events = {
+      'on_click': self.on_click, 
+      'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change, 
+      'custom_popup_html':self.custom_popup_html
+    }
+
     self.init_components(**properties)
-    self.events = {'on_click': self.on_click, 'on_date_change': self.on_date_change,'on_progress_change': self.on_progress_change,'on_view_change': self.on_view_change}
-    self.tasks = []
+        # self.tasks = []
 
   @property
   def view_mode(self):
@@ -26,10 +33,11 @@ class GanttChart(GanttChartTemplate):
   @tasks.setter
   def tasks(self, t):
     self._tasks = t
-    try:
-      self.refresh()
-    except:
-      print('error')
+    self.build_gantt()
+    # try:
+    #   self.refresh()
+    # except:
+    #   print('error')
 
   def refresh(self):
     self.gantt.setup_tasks(self.tasks)
@@ -37,9 +45,14 @@ class GanttChart(GanttChartTemplate):
 
   def form_show(self, **event_args):
     self.column_panel_1.clear()
-    panel = anvil.js.get_dom_node(self.column_panel_1)
-    self.gantt = Gantt(panel, self.tasks, {'view_mode': self.view_mode}, self.events)
-    
+    self.panel = anvil.js.get_dom_node(self.column_panel_1)
+    self.build_gantt()
+
+  def build_gantt(self):
+    if not (self.tasks and self.panel):
+      return
+    self.gantt = Gantt(self.panel, self.tasks, self.events.update({'view_mode': self.view_mode,'header_height': 50,
+    'column_width': 30,}))
     #  {
     # 'header_height': 50,
     # 'column_width': 30,
@@ -60,6 +73,7 @@ class GanttChart(GanttChartTemplate):
 
   def on_click(self, task):
     self.raise_event('on_click', task=task)
+    
 
   def on_date_change(self, task, start, end):
     self.raise_event('on_date_change', task=task, start=start, end=end)
@@ -70,18 +84,14 @@ class GanttChart(GanttChartTemplate):
   def on_view_change(self, mode):
     self.raise_event('on_view_change', mode=mode)
 
-  def button_1_click(self, **event_args):
-    self.tasks.append({
-				'start': '2018-10-13',
-				'end': '2018-10-15',
-				'name': 'NOooooo Go Live!',
-				'id': "Task 6",
-				'progress': 20,
-				'dependencies': 'Task 5',
-				'custom_class': 'bar-milestone'
-			})
-    self.gantt.setup_tasks(self.tasks)
-    self.gantt.change_view_mode()
+  def custom_popup_html(self, task):
+    # grid_panel = anvil.js.get_dom_node(Form1())
+    # return grid_panel.innerHTML
+    return """<div class="details-container">
+		  <h5>Custome Task</h5>
+		  <p>Expected to finish by 2023</p>
+		  <p>80% completed!</p>
+		</div>"""
 
     
 
