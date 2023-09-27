@@ -13,14 +13,14 @@ class _TreantJsExample(_TreantJsExampleTemplate):
         'children': [
             {
                 'text': { 'name': "true bacteria" },
-                'image': "img/truebacteria.png"
+                'image': "_/theme/img/truebacteria.png"
             },
             {
                 'pseudo': True,
                 'children': [
                     {
                         'text': { 'name': "archea bacteria" },
-                        'image': "img/archaebacteria.png"
+                        'image': "_/theme/img/archaebacteria.png"
                     },
                     {
                         'text': { 'name': "EUKARYOTES" },
@@ -28,7 +28,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                         'children': [
                             {
                                 'text': { 'name': "protocists" },
-                                'image': "img/protoctis.png"
+                                'image': "_/theme/img/protoctis.png"
                             },
                             {
                                 'pseudo': True,
@@ -48,29 +48,29 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                 'children': [
                                                                     {
                                                                         'text': { 'name': "flowering seed plants" },
-                                                                        'image': "img/cvijece2.png"
+                                                                        'image': "_/theme/img/cvijece2.png"
                                                                     },
                                                                     {
                                                                         'text': { 'name': "non-flowering seed plants" },
-                                                                        'image': "img/ne_cvijece.png"
+                                                                        'image': "_/theme/img/ne_cvijece.png"
                                                                     }
                                                                 ]
                                                             },
                                                             {
                                                                'text': { 'name': "ferns and fern allies" },
-                                                                'image': "img/ferns.png"
+                                                                'image': "_/theme/img/ferns.png"
                                                             }
                                                         ]
                                                     },
                                                     {
                                                         'text': { 'name': "mosses and allies" },
-                                                        'image': "img/mosses.png"
+                                                        'image': "_/theme/img/mosses.png"
                                                     }
                                                 ]
                                             },
                                             {
                                                 'text': { 'name': "green algae" },
-                                                'image': "img/greenalgae.png"
+                                                'image': "_/theme/img/greenalgae.png"
                                             }
                                         ]
                                     },
@@ -79,7 +79,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                         'children': [
                                             {
                                                 'text': { 'name': "fungi and lichens" },
-                                                'image': "img/fungi.png"
+                                                'image': "_/theme/img/fungi.png"
                                             },
                                             {
                                                 'text': { 'name': "ANIMALS" },
@@ -87,14 +87,14 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                 'children': [
                                                     {
                                                         'text': { 'name': "sponges" },
-                                                        'image': "img/spuzva.png"
+                                                        'image': "_/theme/img/spuzva.png"
                                                     },
                                                     {
                                                         'pseudo': True,
                                                         'children': [
                                                             {
                                                                 'text': { 'name': "cnidarians" },
-                                                                'image': "img/cnidarians.png"
+                                                                'image': "_/theme/img/cnidarians.png"
                                                             },
                                                             {
                                                                 'pseudo': True,
@@ -105,7 +105,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                         'children': [
                                                                             {
                                                                                 'text': { 'name': "echinoderms" },
-                                                                                'image': "img/zvezda.png"
+                                                                                'image': "_/theme/img/zvezda.png"
                                                                             },
                                                                             {
                                                                                 'text': { 'name': "VERTEBRATES" },
@@ -113,11 +113,11 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                                 'children': [
                                                                                     {
                                                                                         'text': { 'name': "cartilaginous fish" },
-                                                                                        'image': "img/cartilaginousfish.png"
+                                                                                        'image': "_/theme/img/cartilaginousfish.png"
                                                                                     },
                                                                                     {
                                                                                         'text': { 'name': "bony fish" },
-                                                                                        'image': "img/bonyfish.png"
+                                                                                        'image': "_/theme/img/bonyfish.png"
                                                                                     },
                                                                                     {
                                                                                         'text': { 'name': "TETRAPODS" },
@@ -125,7 +125,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                                         'children': [
                                                                                             {
                                                                                                 'text': { 'name': "amphibians" },
-                                                                                                'image': "img/zaba.png"
+                                                                                                'image': "_/theme/img/zaba.png"
                                                                                             },
                                                                                             {
                                                                                                 'text': { 'name': "AMNIOTES" },
@@ -136,18 +136,18 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                                                         'children': [
                                                                                                             {
                                                                                                                 'text': { 'name': "turtles" },
-                                                                                                                'image': "img/kornjaca.png"
+                                                                                                                'image': "_/theme/img/kornjaca.png"
                                                                                                             },
                                                                                                             {
                                                                                                                 'pseudo': True,
                                                                                                                 'children': [
                                                                                                                     {
                                                                                                                         'text': { 'name': "snakes and lizards" },
-                                                                                                                        'image': "img/zmijurina.png"
+                                                                                                                        'image': "_/theme/img/zmijurina.png"
                                                                                                                     },
                                                                                                                     {
                                                                                                                         'text': { 'name': "crocodiles and birds" },
-                                                                                                                        'image': "img/ptica.png"
+                                                                                                                        'image': "_/theme/img/ptica.png"
                                                                                                                     }
                                                                                                                 ]
                                                                                                             }
@@ -155,7 +155,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                                                     },
                                                                                                     {
                                                                                                         'text': { 'name': "mammals" },
-                                                                                                        'image': "img/slon.png"
+                                                                                                        'image': "_/theme/img/slon.png"
                                                                                                     }
                                                                                                 ]
                                                                                             }
@@ -171,7 +171,7 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                         'children': [
                                                                             {
                                                                                 'text': { 'name': "chelicerates" },
-                                                                                'image': "img/chelirates.png"
+                                                                                'image': "_/theme/img/chelirates.png"
                                                                             },
                                                                             {
                                                                                 'pseudo': True,
@@ -179,11 +179,11 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                                 'children': [
                                                                                     {
                                                                                         'text': { 'name': "crustaceans" },
-                                                                                        'image': "img/rak.png"
+                                                                                        'image': "_/theme/img/rak.png"
                                                                                     },
                                                                                     {
                                                                                         'text': { 'name': "insects and myriapods" },
-                                                                                        'image': "img/insekti.png"
+                                                                                        'image': "_/theme/img/insekti.png"
                                                                                     }
                                                                                 ]
                                                                             }
@@ -194,11 +194,11 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                         'children': [
                                                                             {
                                                                                 'text': { 'name': "flatworms" },
-                                                                                'image': "img/flatare.png"
+                                                                                'image': "_/theme/img/flatare.png"
                                                                             },
                                                                             {
                                                                                 'text': { 'name': "lophophorates" },
-                                                                                'image': "img/lophoprates.png"
+                                                                                'image': "_/theme/img/lophoprates.png"
                                                                             }
 
                                                                         ]
@@ -210,11 +210,11 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                         'children': [
                                                                             {
                                                                                 'text': { 'name': "rotifers" },
-                                                                                'image': "img/rotfiers.png"
+                                                                                'image': "_/theme/img/rotfiers.png"
                                                                             },
                                                                             {
                                                                                 'text': { 'name': "roundworms" },
-                                                                                'image': "img/roundworms.png"
+                                                                                'image': "_/theme/img/roundworms.png"
                                                                             }
                                                                         ]
                                                                     },
@@ -225,11 +225,11 @@ class _TreantJsExample(_TreantJsExampleTemplate):
                                                                         'children': [
                                                                             {
                                                                                 'text': { 'name': "mollusks" },
-                                                                                'image': "img/mosculs.png"
+                                                                                'image': "_/theme/img/mosculs.png"
                                                                             },
                                                                             {
                                                                                 'text': { 'name': "segmented worms" },
-                                                                                'image': "img/segmentedworms.png"
+                                                                                'image': "_/theme/img/segmentedworms.png"
                                                                             }
                                                                         ]
                                                                     }
@@ -251,6 +251,5 @@ class _TreantJsExample(_TreantJsExampleTemplate):
     }
 
   def form_show(self, **event_args):
-    """This method is called when the column panel is shown on the screen"""
-    pass
+    self.treant_js_1.node_structure = self.node
 
