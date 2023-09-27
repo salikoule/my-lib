@@ -11,3 +11,31 @@ components:
   layout_properties: {grid_position: 'RZBSFB,WZGPYN', full_width_row: true}
 is_package: true
 custom_component: true
+properties:
+- name: root_orientation
+  type: enum
+  default_binding_prop: true
+  important: true
+  options: [NORTH, EAST, WEST, SOUTH]
+  default_value: NORTH
+  description: This property specifies the position of the root node, and the orientation of its children which depend on it.
+- name: node_align
+  type: enum
+  important: true
+  options: [CENTER, TOP, BOTTOM]
+  default_value: CENTER
+  description: Specifies the vertical alignment of nodes on the same level. Is one node has a bigger height than the others, the ones with the smaller height should be properly vertical aligned.
+- name: connectors
+  type: enum
+  important: true
+  options: [curve, bCurve, step, straight]
+  default_value: curve
+  description: Defines which type of connector line should be drawn between a parent node and its children.
+- name: scrollbar
+  type: enum
+  important: true
+  options: [native, fancy, None]
+  default_value: native
+  description: If the chart container is smaller than the chart content a scrollbar will be shown. There are tree possibilities. Use a native browser scrollbar, use a fancy jquery powered scrollbar or don't use scrollbar at all with the "None" property.
+- {name: height, type: number, important: true, default_value: 500}
+- {name: width, type: number, important: true, default_value: 500}

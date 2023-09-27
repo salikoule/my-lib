@@ -1,11 +1,11 @@
-from ._anvil_designer import _TestFormTemplate
+from ._anvil_designer import _TestAgGridTemplate
 from anvil import *
 import anvil.server
 from .. import nanoid
 
 import anvil.js
 
-class _TestForm(_TestFormTemplate):
+class _TestAgGrid(_TestAgGridTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
