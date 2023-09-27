@@ -1,8 +1,8 @@
-from ._anvil_designer import TreantLibTemplate
+from ._anvil_designer import _TestTreantTemplate
 from anvil import *
 import anvil.server
 
-class TreantLib(TreantLibTemplate):
+class _TestTreant(_TestTreantTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
