@@ -1,0 +1,10 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {show: form_show}
+components:
+- type: form:TreantJS
+  properties: {}
+  name: treant_js_1
+  layout_properties: {grid_position: 'BNJHXI,XWDXIN'}
+is_package: true

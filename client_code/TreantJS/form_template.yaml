@@ -39,3 +39,5 @@ properties:
   description: If the chart container is smaller than the chart content a scrollbar will be shown. There are tree possibilities. Use a native browser scrollbar, use a fancy jquery powered scrollbar or don't use scrollbar at all with the "None" property.
 - {name: height, type: number, important: true, default_value: 500}
 - {name: width, type: number, important: true, default_value: 500}
+- {name: node_structure, type: object, important: true}
+- {name: animate_on_init, type: boolean, default_value: true, important: true, description: Every chart can be animated uppon initialization if this option is set to true.}
