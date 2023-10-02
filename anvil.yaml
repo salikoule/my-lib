@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: _TestGanttChart}
+startup: {type: form, module: _TestAgGrid}
 package_name: My_Lib
 allow_embedding: false
 name: My Lib
