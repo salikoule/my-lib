@@ -11,8 +11,6 @@ import uuid
 class AgGrid(AgGridTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-
     self._grid_options = {'defaultColDef': {
                       'flex': 1,
                       'minWidth': 100,
