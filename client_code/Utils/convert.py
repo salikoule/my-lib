@@ -1,8 +1,9 @@
 import anvil.server
 import anvil.tz as tz
 from datetime import datetime
+MILLINAMES = ['',' k',' m',' bn',' tn']
 
-def to_local_time(utc_time):
+def to_local_time(utc_time) -> datetime or None:
   """Converts the utc time to browser's timezone"""
   if utc_time is not None:
     if type(utc_time) is str:
@@ -15,16 +16,15 @@ def to_local_time(utc_time):
   else:
     return None
 
-millnames = ['',' k',' m',' bn',' tn']
-def millify(n):
+def millify(number:float or int !=None) -> str:
     """Converts big number to a friendly readable format"""
-    n = float(n)
-    millidx = max(0,min(len(millnames)-1,
+    n = float(number)
+    millidx = max(0,min(len(MILLINAMES)-1,
                         int(math.floor(0 if n == 0 else math.log10(abs(n))/3))))
 
-    return '{:.1f}{}'.format(n / 10**(3 * millidx), millnames[millidx])
+    return '{:.1f}{}'.format(n / 10**(3 * millidx), MILLINAMES[millidx])
 
-def string_to_hex_color(input_str):
+def string_to_hex_color(input_str:str != None) -> str:
     """
     Generates a unique hex color from any input string using a simple hash function.
     The color generated will not be too bright.
@@ -62,3 +62,46 @@ def hex_to_rgba(hex_color, alpha):
   g = int(hex_color[2:4], 16)
   b = int(hex_color[4:6], 16)
   return f'rgba({r}, {g}, {b}, {alpha})'
+
+
+def datetime_to_pretty(time=False) -> str:
+    """
+    Get a datetime object or an int() Epoch timestamp and return a
+    pretty string like 'an hour ago', 'Yesterday', '3 months ago',
+    'just now', etc
+    """
+    now = datetime.utcnow()
+    if type(time) is int:
+        diff = now - datetime.fromtimestamp(time)
+    elif isinstance(time, datetime):
+        diff = now - time
+    elif not time:
+        diff = 0
+    second_diff = diff.seconds
+    day_diff = diff.days
+
+    if day_diff < 0:
+        return ''
+
+    if day_diff == 0:
+        if second_diff < 10:
+            return "just now"
+        if second_diff < 60:
+            return str(second_diff) + " seconds ago"
+        if second_diff < 120:
+            return "a minute ago"
+        if second_diff < 3600:
+            return str(second_diff // 60) + " minutes ago"
+        if second_diff < 7200:
+            return "an hour ago"
+        if second_diff < 86400:
+            return str(second_diff // 3600) + " hours ago"
+    if day_diff == 1:
+        return "Yesterday"
+    if day_diff < 7:
+        return str(day_diff) + " days ago"
+    if day_diff < 31:
+        return str(day_diff // 7) + " weeks ago"
+    if day_diff < 365:
+        return str(day_diff // 30) + " months ago"
+    return str(day_diff // 365) + " years ago"
