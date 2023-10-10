@@ -1,7 +1,6 @@
 from ._anvil_designer import Form2Template
 from anvil import *
 import anvil.server
-from 
 
 _js_timepicker = anvil.js.import_from("//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js")
 
