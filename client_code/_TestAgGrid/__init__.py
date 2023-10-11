@@ -9,7 +9,7 @@ class _TestAgGrid(_TestAgGridTemplate):
     self.col_defs = [
         { 'field': "make" },
         { 'field': "model" },
-        { 'field': "price" }
+        { 'field': "price", 'sort': 'desc' }
                     ]
     row_data = [
       { 'make': "Toyota", 'model': "Celica", 'price': 35000 },
@@ -17,7 +17,7 @@ class _TestAgGrid(_TestAgGridTemplate):
       { 'make': "Porsche", 'model': "Boxster", 'price': 72000 }
     ]
     grid_options = {'columnDefs': self.col_defs,
-                                  'rowData': row_data,
+                                  #'rowData': row_data,
                                   #'onCellClicked': self.on_cell_clicked,
                                   #'onRowSelected': self.on_row_selected,
                                  }

@@ -23,7 +23,9 @@ class AgGrid(AgGridTemplate):
                         'debounceMs': 200
                           },
                       'sortable':True
-                    }}
+                    },
+                          'rowModelType': 'serverSide',
+                         'serverSideDatasource': {'getRows':self.build_postgresql_query},}
     self.init_components(**properties)
     self.grid_id = str(uuid.uuid4())
 
@@ -93,4 +95,46 @@ class AgGrid(AgGridTemplate):
     grid_panel.innerHTML = f'<div id="{self.grid_id}" class="{self.theme}" style="height: {self.height}px"></div>'
     ag_grid_id = window.document.getElementById(f"{self.grid_id}")
     self.grid = agGrid.Grid(ag_grid_id, self.grid_options)
+
+  def build_postgresql_query(self, params):
+    # Initialize the SQL query
+    # print(params)
+    print('ok')
+    query = "SELECT * FROM your_table_name"
+
+    # Pagination
+    page_size = params.get("pageSize")
+    start_row = params.get("startRow")
+    if page_size and start_row is not None:
+        query += f" LIMIT {page_size} OFFSET {start_row}"
+
+    # Sorting
+    sort_model = params.get("sortModel")
+    if sort_model:
+        sort_columns = []
+        for sort in sort_model:
+            col_id = sort["colId"]
+            sort_dir = sort["sort"]
+            sort_columns.append(f"{col_id} {sort_dir}")
+        if sort_columns:
+            query += " ORDER BY " + ", ".join(sort_columns)
+
+    # Filtering
+    filter_model = params.get("filterModel")
+    if filter_model:
+        filters = []
+        for col_id, filter_values in filter_model.items():
+            # Adjust this part based on your filter structure in ag-Grid
+            filter_conditions = []
+            for filter_val in filter_values:
+                filter_conditions.append(f"{col_id} = '{filter_val}'")
+            if filter_conditions:
+                filters.append("(" + " OR ".join(filter_conditions) + ")")
+        if filters:
+            query += " WHERE " + " AND ".join(filters)
+
+    # You can also handle grouping if needed
+    print(query)
+    return query
+
 
