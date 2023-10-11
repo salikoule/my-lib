@@ -25,7 +25,10 @@ class AgGrid(AgGridTemplate):
                       'sortable':True
                     },
                           'rowModelType': 'serverSide',
-                         'serverSideDatasource': {'getRows':self.build_postgresql_query},}
+                         'serverSideDatasource': {'getRows':self.build_postgresql_query},
+                          # 'getServerSideDatasource':self.build_postgresql_query
+                         # 'onSortChanged': self.on_sort_change,
+                         }
     self.init_components(**properties)
     self.grid_id = str(uuid.uuid4())
 
@@ -96,11 +99,16 @@ class AgGrid(AgGridTemplate):
     ag_grid_id = window.document.getElementById(f"{self.grid_id}")
     self.grid = agGrid.Grid(ag_grid_id, self.grid_options)
 
+
+  def on_sort_change(self, params):
+    print(dict(params.columnApi.columnController))
+    params.api.getServerSideDatasource(build_postgresql_query)
+
   def build_postgresql_query(self, params):
     # Initialize the SQL query
-    # print(params)
-    print('ok')
+    params = params.request
     query = "SELECT * FROM your_table_name"
+    print(params)
 
     # Pagination
     page_size = params.get("pageSize")
