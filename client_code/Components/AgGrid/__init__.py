@@ -74,7 +74,7 @@ class AgGrid(AgGridTemplate):
   @sidebar.setter
   def sidebar(self, s):
     self._sidebar = s
-    self._grid_options.update({'sidebar': s})
+    self._grid_options.update({'sideBar': s})
 
   @property
   def row_selection(self):
@@ -99,8 +99,6 @@ class AgGrid(AgGridTemplate):
     self.grid_panel = anvil.js.get_dom_node(self.flow_panel)
     self.grid_panel.innerHTML = f'<div id="{self.grid_id}" class="{self.theme}" style="height: {self.height}px"></div>'
     # self.build_grid()
-    
-
 
   def build_grid(self):
     if self.grid_panel:
