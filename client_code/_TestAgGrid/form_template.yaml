@@ -1,7 +1,7 @@
 container:
   type: ColumnPanel
   properties: {col_widths: '{}'}
-  event_bindings: {}
+  event_bindings: {show: form_show}
 components:
 - type: form:Components.AgGrid
   properties: {height: 500, theme: ag-theme-alpine, pagination: true, pagination_page_size: 25,

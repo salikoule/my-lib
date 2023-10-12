@@ -6,6 +6,8 @@ class _TestAgGrid(_TestAgGridTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+
+  def form_show(self, **event_args):
     self.col_defs = [
         { 'field': "make" },
         { 'field': "model" },
@@ -17,11 +19,13 @@ class _TestAgGrid(_TestAgGridTemplate):
       { 'make': "Porsche", 'model': "Boxster", 'price': 72000 }
     ]
     grid_options = {'columnDefs': self.col_defs,
-                                  #'rowData': row_data,
+                                  'rowData': row_data,
                                   #'onCellClicked': self.on_cell_clicked,
                                   #'onRowSelected': self.on_row_selected,
                                  }
     self.ag_grid_1.grid_options = grid_options
+
+    
 
 
 
