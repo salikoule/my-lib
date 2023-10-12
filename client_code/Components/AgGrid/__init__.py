@@ -92,6 +92,16 @@ class AgGrid(AgGridTemplate):
   @spacing_above.setter
   def spacing_above(self, space):
     self._spacing_above = space
+    self.flow_panel.spacing_above = space
+
+  @property
+  def spacing_below(self):
+    return self._spacing_below
+  
+  @spacing_below.setter
+  def spacing_below(self, space):
+    self._spacing_below = space
+    self.flow_panel.spacing_below = space
     
   @property
   def grid_options(self):
