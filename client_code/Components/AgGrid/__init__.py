@@ -24,11 +24,12 @@ class AgGrid(AgGridTemplate):
                           },
                       'sortable':True
                     },
-                          'rowModelType': 'serverSide',
-                         'serverSideDatasource': {'getRows':self.build_postgresql_query},
+                         #  'rowModelType': 'serverSide',
+                         # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
                           # 'getServerSideDatasource':self.build_postgresql_query
                          # 'onSortChanged': self.on_sort_change,
                          }
+    self.grid_panel = None
     self.init_components(**properties)
     self.grid_id = str(uuid.uuid4())
 
@@ -91,15 +92,28 @@ class AgGrid(AgGridTemplate):
   @grid_options.setter
   def grid_options(self, go={}):
     self._grid_options.update(go)
+    self.build_grid()
     
   def form_show(self, **event_args):
     self.flow_panel.clear()
-    grid_panel = anvil.js.get_dom_node(self.flow_panel)
-    grid_panel.innerHTML = f'<div id="{self.grid_id}" class="{self.theme}" style="height: {self.height}px"></div>'
-    ag_grid_id = window.document.getElementById(f"{self.grid_id}")
-    self.grid = agGrid.Grid(ag_grid_id, self.grid_options)
+    self.grid_panel = anvil.js.get_dom_node(self.flow_panel)
+    self.grid_panel.innerHTML = f'<div id="{self.grid_id}" class="{self.theme}" style="height: {self.height}px"></div>'
+    # self.build_grid()
+    
 
 
+  def build_grid(self):
+    if self.grid_panel:
+      ag_grid_id = window.document.getElementById(f"{self.grid_id}")
+      self.grid = agGrid.Grid(ag_grid_id, self.grid_options)
+
+
+
+
+
+
+
+  
   def on_sort_change(self, params):
     print(dict(params.columnApi.columnController))
     params.api.getServerSideDatasource(build_postgresql_query)
