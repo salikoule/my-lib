@@ -84,6 +84,14 @@ class AgGrid(AgGridTemplate):
   def row_selection(self, rs):
     self._row_selection = rs
     self._grid_options.update({'rowSelection': rs})
+
+  @property
+  def spacing_above(self):
+    return self._spacing_above
+  
+  @spacing_above.setter
+  def spacing_above(self, space):
+    self._spacing_above = space
     
   @property
   def grid_options(self):

@@ -29,3 +29,15 @@ properties:
   important: true
   options: [single, multiple]
   default_value: single
+- name: spacing_above
+  type: enum
+  important: true
+  options: [none, small, medium, large]
+  group: LAYOUT
+  default_value: small
+- name: spacing_below
+  type: enum
+  important: true
+  options: [none, small, medium, large]
+  group: LAYOUT
+  default_value: small
