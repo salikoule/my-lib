@@ -1,0 +1,12 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<div id=\"jstree\"></div>\n\n<script>\nfunction initialize_js_tree(data)\
+      \ {\n    $('#jstree').jstree({\n        'core': {\n            'data': data\n\
+      \        }\n    });\n}\n\n$('#jstree').on(\"select_node.jstree\", function (e,\
+      \ data) {\n        anvil.call($('.jstree'), 'node_clicked_callback', e, data);\n\
+      \    });\n\nfunction add_node_to_js_tree(node_text) {\n     $('#jstree').jstree().create_node(null,\
+      \ { text: node_text });\n}\n</script>\n\n"}
+  event_bindings: {show: form_show}
+components: []
+is_package: true
