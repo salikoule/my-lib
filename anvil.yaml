@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: _TestAgGrid}
+startup: {type: form, module: Components.TreeJS}
 package_name: My_Lib
 allow_embedding: false
 name: My Lib
@@ -41,5 +41,8 @@ native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/f
     _/theme/vendor/perfect-scrollbar/perfect-scrollbar.css\" rel=\"stylesheet\" type=\"\
     text/css\"/>\n<!--<script src=\"_/theme/vendor/jquery.min.js\"></script>\n<script\
     \ src=\"_/theme/vendor/jquery.mousewheel.js\"></script>-->\n<script src=\"_/theme/vendor/perfect-scrollbar/perfect-scrollbar.js\"\
-    ></script>"}
+    ></script>\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\"\
+    ></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"\
+    ></script>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\"\
+    \ />"}
 renamed: true
