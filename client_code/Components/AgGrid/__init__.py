@@ -22,7 +22,8 @@ class AgGrid(AgGridTemplate):
                         'buttons': ['reset', 'apply'],
                         'debounceMs': 200
                           },
-                      'sortable':True
+                      'sortable':True,
+                      'maintainColumnOrder':True
                     },
                          #  'rowModelType': 'serverSide',
                          # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
