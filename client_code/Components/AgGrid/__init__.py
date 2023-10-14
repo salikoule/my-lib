@@ -23,7 +23,6 @@ class AgGrid(AgGridTemplate):
                         'debounceMs': 200
                           },
                       'sortable':True,
-                      'maintainColumnOrder':True
                     },
                          #  'rowModelType': 'serverSide',
                          # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
