@@ -9,19 +9,21 @@ DropDown.value = property(lambda self: self.drop_down, lambda self, val: setattr
 TextArea.value = property(lambda self: self.text_area, lambda self, val: setattr(self, "text_area", val))
 
 class Input(InputTemplate):
-  def __init__(self, error=None, type="text", key="", format="DD-MM-YYYY", items=[] **properties):
+  def __init__(self, error=None, type="text", key="", format="DD-MM-YYYY", items=[], **properties):
     # Set Form properties and Data Bindings.
-    self.init_components(error=error, type=type, key=key, format=format, items=items **properties)
+    self.init_components(error=error, type=type, key=key, format=format, items=items, **properties)
 
     self.label.text = key.capitalize()
     self.setup_input()
 
   def setup_input(self):
     if self.type == "date":
+      print(self.format)
       self.input = DatePicker(format=self.format, role='outlined')
       self.input_panel.clear()
       self.input_panel.add_component(self.input, expand=True)
     elif self.type == "drop_down":
+      print(self.items)
       self.input = DropDown(items=self.items, role='outlined')
       self.input_panel.clear()
       self.input_panel.add_component(self.input, expand=True)

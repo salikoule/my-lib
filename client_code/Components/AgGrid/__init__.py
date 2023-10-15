@@ -24,10 +24,11 @@ class AgGrid(AgGridTemplate):
                           },
                       'sortable':True,
                     },
-                          'rowModelType': 'serverSide',
-                         'serverSideDatasource': {'getRows':self.build_postgresql_query},
+                         #  'rowModelType': 'serverSide',
+                         # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
+                         #  'serverSideStoreType': '',
                           # 'getServerSideDatasource':self.build_postgresql_query
-                         'onSortChanged': self.on_sort_change,
+                         # 'onSortChanged': self.on_sort_change,
                          }
     self.grid_panel = None
     self.init_components(**properties)
