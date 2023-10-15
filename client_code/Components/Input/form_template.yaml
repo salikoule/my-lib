@@ -18,9 +18,10 @@ events:
 custom_component: true
 components:
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: null, font: '', spacing_above: none, icon_align: left, spacing_below: small,
-    italic: false, background: '', bold: false, underline: false, icon: ''}
+  properties: {role: error-label, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
+    spacing_below: none, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
   name: label
   layout_properties:
     col_widths: {}
@@ -50,4 +51,8 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: XYKHQD,CMXAOH
-container: {type: ColumnPanel}
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none,
+    background: ''}

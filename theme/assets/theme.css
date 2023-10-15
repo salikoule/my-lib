@@ -22,8 +22,8 @@
 .has-text .anvil-component-icon.right-icon { margin-left: 8px; }
 
 .anvil-role-error-label span {
-/*     padding-top: 0;
-    padding-bottom: 0; */
+    padding-top: 0;
+    padding-bottom: 0;
     margin: 0;
     padding: 0 !important;
 }
