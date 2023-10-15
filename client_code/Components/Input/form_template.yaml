@@ -7,11 +7,6 @@ properties:
   default_value: text
 - {name: key, type: string, default_value: '', important: true}
 - {name: error, type: object, important: true}
-- {name: format, type: string, default_value: DD-MM-YYYY, important: true}
-- name: items
-  type: enum
-  important: true
-  options: []
 is_package: true
 events:
 - {name: change, default_event: true}

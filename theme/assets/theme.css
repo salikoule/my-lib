@@ -26,6 +26,8 @@
     padding-bottom: 0;
     margin: 0;
     padding: 0 !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 a>.anvil-component-icon.left_edge-icon,
