@@ -27,7 +27,7 @@ class AgGrid(AgGridTemplate):
                           'rowModelType': 'serverSide',
                          'serverSideDatasource': {'getRows':self.build_postgresql_query},
                           # 'getServerSideDatasource':self.build_postgresql_query
-                         # 'onSortChanged': self.on_sort_change,
+                         'onSortChanged': self.on_sort_change,
                          }
     self.grid_panel = None
     self.init_components(**properties)
@@ -124,8 +124,8 @@ class AgGrid(AgGridTemplate):
 
   #-----------------------------------------------------------------
   def on_sort_change(self, params):
-    print(dict(params.columnApi.columnController))
-    params.api.getServerSideDatasource(build_postgresql_query)
+    # print(dict(params.columnApi.columnController))
+    params.api.setServerSideDatasource(self.build_postgresql_query)
 
   def build_postgresql_query(self, params):
     # Initialize the SQL query
