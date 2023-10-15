@@ -24,8 +24,8 @@ class AgGrid(AgGridTemplate):
                           },
                       'sortable':True,
                     },
-                         #  'rowModelType': 'serverSide',
-                         # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
+                          'rowModelType': 'serverSide',
+                         'serverSideDatasource': {'getRows':self.build_postgresql_query},
                           # 'getServerSideDatasource':self.build_postgresql_query
                          # 'onSortChanged': self.on_sort_change,
                          }
