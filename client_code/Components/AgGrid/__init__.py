@@ -17,7 +17,7 @@ class AgGrid(AgGridTemplate):
                       'resizable': True,
                       'enableValue': True,
                       'enableRowGroup': True,
-                      'editable': True,
+                      # 'editable': True,
                       'filter': True,
                       'filterParams': {
                         'buttons': ['reset', 'apply'],
