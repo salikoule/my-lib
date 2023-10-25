@@ -7,11 +7,11 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: Components.TreeJS}
-package_name: My_Lib
+package_name: Craftify
 allow_embedding: false
-name: My Lib
+name: Craftify
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: My Components Library}
+metadata: {title: Craftify Custom Components}
 startup_form: null
 native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.min.js\"\
     ></script>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.css\"\

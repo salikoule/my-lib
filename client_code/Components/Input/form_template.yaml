@@ -20,6 +20,7 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: SMEPEK,BAVEGB
+    full_width_row: true
   data_bindings: []
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
@@ -28,6 +29,7 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: OWYCEP,YBXHGV
+    full_width_row: true
   components:
   - type: TextBox
     properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: '',
@@ -45,6 +47,7 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: XYKHQD,CMXAOH
+    full_width_row: true
 container:
   type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
