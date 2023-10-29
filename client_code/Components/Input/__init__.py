@@ -26,7 +26,7 @@ class Input(InputTemplate):
       self.input = TextArea(**self.prop)
     else:
       self.input = TextBox(**self.prop)
-      
+
     self.input_panel.add_component(self.input, expand=True)
     self.input.add_event_handler("change", self.change)
 
