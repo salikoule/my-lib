@@ -13,7 +13,7 @@ class Input(InputTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(error=error, type=type, key=key, **properties)
     self.prop = properties['prop']
-    self.label.text = key.capitalize()
+    self.label.text = ' '.join(list(k.capitalize() for k in key.split("_")))
     self.setup_input()
 
   def setup_input(self):
