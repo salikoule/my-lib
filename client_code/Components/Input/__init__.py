@@ -13,6 +13,7 @@ class Input(InputTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(error=error, type=type, key=key, **properties)
     self.prop = properties['prop']
+    self.prerequisites = properties['prerequisites']
     self.label.text = ' '.join(list(k.capitalize() for k in key.split("_")))
     self.setup_input()
 
@@ -26,6 +27,9 @@ class Input(InputTemplate):
       self.input = TextArea(**self.prop)
     else:
       self.input = TextBox(**self.prop)
+
+    if self.prerequisites:
+      self.visible = False
 
     self.input_panel.add_component(self.input, expand=True)
     self.input.add_event_handler("change", self.change)
@@ -53,3 +57,11 @@ class Input(InputTemplate):
 
   def change(self, **event_args):
     self.raise_event("change", key=self.key, value=self.value)
+
+  def refresh(self, **event_args):
+    if self.prerequisites:
+      key = event_args.get('key', None)
+      value = event_args.get('value', None)
+      if key in self.prerequisites:
+        self.visible = True if value in self.prerequisites[key] else False
+        print('---> Refreshed! <---')

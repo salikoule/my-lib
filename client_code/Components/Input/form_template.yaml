@@ -10,6 +10,7 @@ properties:
 is_package: true
 events:
 - {name: change, default_event: true}
+- {name: refresh}
 custom_component: true
 components:
 - type: Label
