@@ -64,4 +64,3 @@ class Input(InputTemplate):
       value = event_args.get('value', None)
       if key in self.prerequisites:
         self.visible = True if value in self.prerequisites[key] else False
-        print('---> Refreshed! <---')
