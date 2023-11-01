@@ -5,8 +5,8 @@ import anvil.server
 # add value properties for convenience
 DatePicker.value = property(lambda self: self.date, lambda self, val: setattr(self, "date", val))
 TextBox.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
-DropDown.value = property(lambda self: self.selected_value, lambda self, val: setattr(self, "drop_down", val))
-TextArea.value = property(lambda self: self.text, lambda self, val: setattr(self, "text_area", val))
+DropDown.value = property(lambda self: self.selected_value, lambda self, val: setattr(self, "selected_value", val))
+TextArea.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
 
 class Input(InputTemplate):
   def __init__(self, error=None, type="text", key="", **properties):
@@ -54,6 +54,7 @@ class Input(InputTemplate):
   @value.setter
   def value(self, value):
     self.input.value = value
+    self.refresh(key=self.key, value=value)
 
   def change(self, **event_args):
     self.raise_event("change", key=self.key, value=self.value)
