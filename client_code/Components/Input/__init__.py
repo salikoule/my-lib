@@ -54,7 +54,6 @@ class Input(InputTemplate):
   @value.setter
   def value(self, value):
     self.input.value = value
-    self.refresh(key=self.key, value=value)
 
   def change(self, **event_args):
     self.raise_event("change", key=self.key, value=self.value)
