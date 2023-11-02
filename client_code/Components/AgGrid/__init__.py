@@ -24,7 +24,9 @@ class AgGrid(AgGridTemplate):
                         'debounceMs': 200
                           },
                       'sortable':True,
+                      
                     },
+                    'getRowId':self.get_row_id
                          #  'rowModelType': 'serverSide',
                          # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
                          #  'serverSideStoreType': '',
@@ -34,6 +36,9 @@ class AgGrid(AgGridTemplate):
     self.grid_panel = None
     self.init_components(**properties)
     self.grid_id = str(uuid.uuid4())
+
+  def get_row_id(self, params):
+    return params['data']['id']
 
   @property
   def height(self):
