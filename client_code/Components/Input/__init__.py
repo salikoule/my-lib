@@ -44,7 +44,7 @@ class Input(InputTemplate):
     if not error:
       self.error_label.text = " "
     else:
-      print(error, error.errors(self.key))
+      # print(error, error.errors(self.key))
       self.error_label.text = "\n".join(error.errors(self.key)) or " "
 
   @property
