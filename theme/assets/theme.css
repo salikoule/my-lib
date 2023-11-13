@@ -1051,3 +1051,19 @@ div.plot-container.plotly svg.main-svg {
   box-shadow: 0px 0px 100px 100px %color:Surface Variant%;
 }
 
+.anvil-role-center-alert {
+    overflow: hidden;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%) !important;
+}
+
+.anvil-role-center-alert.modal-content {
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+#alert-modal {
+    backdrop-filter: blur(8px); /*Adjust value according to your need*/
+    -webkit-backdrop-filter: blur(8px); /*Adjust value according to your need*/
+}

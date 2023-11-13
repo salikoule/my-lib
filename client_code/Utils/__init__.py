@@ -7,5 +7,6 @@ import anvil.server
 #    Package1.say_hello()
 #
 
-def say_hello():
-  print("Hello, world")
+def centered_alert(content, title = "", buttons=None, large=False):
+  """Centered Aligned Alert with blurred background effect"""
+  return anvil.alert(content, title=title, buttons=buttons, large=large, role='center-alert')
