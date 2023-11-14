@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Form2}
+startup: {type: form, module: Components.ChartJS}
 package_name: Craftify
 allow_embedding: false
 name: Craftify
@@ -44,5 +44,8 @@ native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/f
     ></script>\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\"\
     ></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"\
     ></script>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\"\
-    \ />"}
+    \ />\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js\"\
+    \"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js\"\
+    ></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js\"\
+    ></script>"}
 renamed: true

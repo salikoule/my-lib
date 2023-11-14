@@ -1,3 +1,19 @@
-container: {type: ColumnPanel}
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
 components: []
 is_package: true
+custom_component: true
+properties:
+- name: labels
+  type: text[]
+  default_value: []
+  important: true
+  default_binding_prop: true
+- {name: data, type: object, important: true}
+- name: type
+  type: enum
+  important: true
+  options: [line, bar, scatter]
+  default_value: line
+- {name: height, type: number, important: true, default_value: 500}
