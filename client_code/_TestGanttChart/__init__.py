@@ -1,7 +1,7 @@
 from ._anvil_designer import _TestGanttChartTemplate
 from anvil import *
 import anvil.server
-from .. import nanoid
+from ..Utils import nanoid
 from .Form1 import Form1
 import anvil.js
 

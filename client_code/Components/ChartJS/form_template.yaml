@@ -5,12 +5,9 @@ components: []
 is_package: true
 custom_component: true
 properties:
-- name: labels
-  type: text[]
-  default_value: []
-  important: true
-  default_binding_prop: true
-- {name: data, type: object, important: true}
+- {name: config, type: object, important: true}
+- {name: labels, type: object, important: true, default_binding_prop: true}
+- {name: datasets, type: object, important: true}
 - name: type
   type: enum
   important: true
