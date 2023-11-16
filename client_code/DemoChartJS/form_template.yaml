@@ -1,0 +1,9 @@
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
+components:
+- name: chart_js_bar
+  properties: {type: bar}
+  type: form:Components.ChartJS
+  layout_properties: {grid_position: 'LAAQTQ,IWWQFO'}
+is_package: true

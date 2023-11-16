@@ -11,6 +11,6 @@ properties:
 - name: type
   type: enum
   important: true
-  options: [line, bar, scatter]
+  options: [line, bar, scatter, bubble, doughnut, polarArea, radar]
   default_value: line
 - {name: height, type: number, important: true, default_value: 500}
