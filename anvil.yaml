@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: DemoChartJS}
+startup: {type: form, module: _TestChartJS}
 package_name: Craftify
 allow_embedding: false
 name: Craftify
