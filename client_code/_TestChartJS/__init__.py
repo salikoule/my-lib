@@ -4,11 +4,14 @@ import anvil.server
 from .. import Utils
 import random
 import time
+from anvil.js import window
 
 class _TestChartJS(_TestChartJSTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+
+    print(dir(window))
 
     self.chart_js.labels = [50,60,70,80,90,100,110,120,130,140,150]
     self.chart_js.datasets = [{

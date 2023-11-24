@@ -49,7 +49,11 @@ CHART_BASIC_CONFIG = {
          }
       }
     },
+    'dragData': True,
     'scales': {
+      'yAxes': [{
+        'dragData': False
+      }],
       'y':{
          'position': 'left',
           'title':{
