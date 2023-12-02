@@ -8,6 +8,13 @@ from anvil.js.window import agGrid
 from anvil.js.window import window
 import uuid
 
+class CustomTooltip():
+  def __init__(self, **properties):
+    print(properties)
+
+  def getGui(self):
+    return self
+
 class AgGrid(AgGridTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -17,6 +24,7 @@ class AgGrid(AgGridTemplate):
                       'resizable': True,
                       'enableValue': True,
                       'enableRowGroup': True,
+                      'tooltipComponent': CustomTooltip,
                       # 'editable': True,
                       'filter': True,
                       'filterParams': {
@@ -26,6 +34,8 @@ class AgGrid(AgGridTemplate):
                       'sortable':True,
                       
                     },
+                    'tooltipShowDelay': 0,
+                    'tooltipHideDelay': 2000,
                     'getRowId':self.get_row_id
                          #  'rowModelType': 'serverSide',
                          # 'serverSideDatasource': {'getRows':self.build_postgresql_query},
@@ -39,6 +49,9 @@ class AgGrid(AgGridTemplate):
 
   def get_row_id(self, params):
     return params['data']['id']
+
+  def custom_tooltip(self, **params):
+    print(params)
 
   @property
   def height(self):
