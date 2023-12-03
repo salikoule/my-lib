@@ -24,7 +24,7 @@ class AgGrid(AgGridTemplate):
                       'resizable': True,
                       'enableValue': True,
                       'enableRowGroup': True,
-                      'tooltipComponent': CustomTooltip,
+                      # 'tooltipComponent': CustomTooltip,
                       # 'editable': True,
                       'filter': True,
                       'filterParams': {
