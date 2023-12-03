@@ -141,6 +141,7 @@ class AgGrid(AgGridTemplate):
     if self.grid_panel:
       ag_grid_id = window.document.getElementById(f"{self.grid_id}")
       self.grid = agGrid.Grid(ag_grid_id, self.grid_options)
+      
 
   #-----------------------------------------------------------------
   def on_sort_change(self, params):
@@ -187,5 +188,8 @@ class AgGrid(AgGridTemplate):
     # You can also handle grouping if needed
     print(query)
     return query
+
+  def flow_panel_show(self, **event_args):
+    pass
 
 
