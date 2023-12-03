@@ -8,7 +8,7 @@ from anvil.js.window import agGrid
 from anvil.js.window import window
 import uuid
 
-class CustomTooltip():
+class CustomTooltip:
   def __init__(self, **properties):
     print(properties)
 
