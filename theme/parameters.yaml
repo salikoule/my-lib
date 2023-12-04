@@ -51,6 +51,12 @@ roles:
   components: [TextBox, TextArea, DatePicker, DropDown]
 - name: error-label
   components: [Label]
+- name: bubble-left
+  components: [Label]
+- name: bubble-left
+  components: [Label]
+- {name: card-25vh}
+- {name: card-full}
 color_scheme:
   preset_groups:
   - name: Colour Scheme

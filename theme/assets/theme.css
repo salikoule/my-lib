@@ -1067,3 +1067,104 @@ div.plot-container.plotly svg.main-svg {
     backdrop-filter: blur(8px); /*Adjust value according to your need*/
     -webkit-backdrop-filter: blur(8px); /*Adjust value according to your need*/
 }
+
+
+.anvil-role-scrollable {
+overflow-y:scroll;
+position:relative;
+height: 300px;
+}
+
+.anvil-role-card-25vh {
+  height: 50vh;
+  overflow: auto;
+  border-radius: 2px;
+  background-color: transparent;
+  padding: 8px 12px;
+  /* 2dp */ /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+}
+/* full_width_row sections go full bleed */
+.column-panel.anvil-role-card-25vh > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
+  margin-left: -12px;
+  margin-right: -12px;
+  width: initial;
+  max-width: initial;
+}
+
+/* If the first row of a card is a full_width_row, it goes to the top */
+.column-panel.anvil-role-card-25vh > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+  margin-top: -8px;
+}
+.column-panel.anvil-role-card-25vh > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
+  margin-bottom: -8px;
+}
+/*------------------------*/
+.anvil-role-card-full {
+  height:auto;
+  max-height:150%;
+  overflow:auto;  
+  border-radius: 2px;
+  background-color: transparent;
+  padding: 8px 12px;
+  /* 2dp */ /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+}
+/* full_width_row sections go full bleed */
+.column-panel.anvil-role-card-full > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
+  margin-left: -12px;
+  margin-right: -12px;
+  width: initial;
+  max-width: initial;
+  min-height: 100%;
+}
+
+/* If the first row of a card is a full_width_row, it goes to the top */
+.column-panel.anvil-role-card-full > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+  margin-top: -8px;
+}
+.column-panel.anvil-role-card-full > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
+  margin-bottom: -8px;
+}
+
+.anvil-role-bubble-left {
+	position: relative;
+	background: %color:White%;
+	border-radius: .4em;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.anvil-role-bubble-left::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0%;
+	width: 0;
+	height: 0;
+	border: 14px solid transparent;
+	border-right-color: %color:White%;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -0px;
+	margin-left: -8px;
+}
+
+.anvil-role-bubble-right {
+	position: relative;
+	background: %color:Gray 300%;
+	border-radius: .4em;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.anvil-role-bubble-right::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0%;
+	width: 0;
+	height: 0;
+	border: 14px solid transparent;
+	border-left-color: %color:Gray 300%;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -0px;
+	margin-right: -8px;
+}

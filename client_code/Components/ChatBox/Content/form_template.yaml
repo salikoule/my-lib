@@ -1,0 +1,88 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"OWAHRS":4,"UQBWVG":56}'}
+  event_bindings: {show: form_show}
+components:
+- type: Image
+  properties: {role: null, vertical_align: center, height: 32, tooltip: '', border: '',
+    foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+    source: _/theme/avatar.png, spacing_below: small, background: '', horizontal_align: center}
+  name: image_1
+  layout_properties:
+    col_widths: {}
+    grid_position: IQLHAL,OWAHRS
+    full_width_row: true
+  data_bindings: []
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: none,
+    background: ''}
+  name: column_panel_4
+  layout_properties:
+    col_widths: {}
+    grid_position: IQLHAL,UQBWVG OSMQIO,NLAWCJ
+    full_width_row: true
+  components:
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"PGHTAL":30,"PBBNRX":9}',
+      spacing_below: none, background: ''}
+    name: column_panel_3
+    layout_properties: {grid_position: 'CDYDOR,XIUGLQ', full_width_row: true}
+    components:
+    - type: Label
+      properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:On
+          Primary', visible: true, text: '', font_size: null, font: '', spacing_above: none,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_name
+      layout_properties: {grid_position: 'CEXFNW,PGHTAL', full_width_row: true}
+      data_bindings:
+      - {property: text, code: 'f"{self.item[''user''].split(''@'')[0]} - [Internal]"
+          if ''internal'' in self.item and self.item[''internal''] is True  else self.item[''user''].split(''@'')[0]'}
+      - {property: icon, code: '"fa:user-secret" if ''internal'' in self.item and
+          self.item[''internal''] is True  else None'}
+    - type: FlowPanel
+      properties: {role: null, spacing: medium, align: right, tooltip: '', border: '',
+        foreground: '', visible: true, spacing_above: none, spacing_below: none, background: ''}
+      name: flow_panel_1
+      layout_properties: {grid_position: 'CEXFNW,PBBNRX', full_width_row: true}
+      components:
+      - type: Link
+        properties: {role: body, url: '', align: left, tooltip: Download attachment,
+          border: '', foreground: 'theme:On Primary', visible: true, text: '', font_size: null,
+          wrap_on: mobile, font: '', col_spacing: medium, spacing_above: none, icon_align: left,
+          col_widths: '', spacing_below: none, italic: false, background: '', bold: false,
+          underline: false, icon: 'fa:paperclip'}
+        name: link_1
+        layout_properties: {grid_position: 'CEXFNW,HPFPJL', full_width_row: true}
+        data_bindings:
+        - {property: visible, code: 'True if self.item[''attachment''] is not None
+            else False'}
+        event_bindings: {click: link_1_click}
+      - type: Label
+        properties: {role: body, align: right, tooltip: '', border: '', foreground: 'theme:On
+            Primary', visible: true, text: '', font_size: null, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_datetime
+        layout_properties: {grid_position: 'CEXFNW,JITMJE', full_width_row: true}
+        data_bindings:
+        - {property: tooltip, code: 'self.gb.convert_to_local_time(self.item[''created''])'}
+    data_bindings:
+    - {property: background, code: '''theme:Secondary'' if self.item[''user''] ==
+        self.user[''email''] else ''theme:Tertiary'''}
+  data_bindings:
+  - {property: visible, code: 'False if ''internal'' in self.item and self.item[''internal'']
+      is True and self.user[''role''][''name''] ==''client'' else True'}
+  - {property: border, code: '''2px solid'' if self.item[''internal''] is True else
+      None'}
+- type: form:dep_831y34sp6w9nu:Quill
+  properties: {readonly: false, height: '40', placeholder: '', toolbar: false, enabled: true,
+    visible: true, auto_expand: true, content: null, spacing_above: small, spacing_below: small,
+    theme: snow, sanitize: true}
+  name: quill
+  layout_properties: {grid_position: 'IQLHAL,UQBWVG EDRPKF,MJGOOA'}
+  data_bindings:
+  - {property: content, code: 'self.item[''content'']'}
+is_package: true
