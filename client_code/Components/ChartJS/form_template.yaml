@@ -17,10 +17,4 @@ properties:
 - {name: options, type: object, important: true}
 - {name: axis_title, type: object, important: true, description: SOme description}
 - {name: axis_tick_callback, type: object, important: true}
-- {name: legend_display, type: boolean, important: true, default_value: true, group: Legend}
-- name: legend_position
-  type: enum
-  important: true
-  options: [right, left, top, bottom]
-  default_value: right
-  group: Legend
+- {name: legend, type: object, important: true}

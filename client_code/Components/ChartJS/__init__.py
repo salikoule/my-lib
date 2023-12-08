@@ -81,25 +81,20 @@ class ChartJS(ChartJSTemplate):
       self._config['options']['scales'][axis]['ticks']['callback'] = func
 
   @property
-  def legend_display(self):
-    """Select with True or Flase if the legent will be displayed"""
+  def legend(self):
+    """Give as input a dictionary that configures the legend
+      Eg. {'display': True, 'position': 'right', ...}
+    """
     return self._legend
   
-  @legend_display.setter
-  def legend_display(self, l_d):
-    self._legend_display = l_d
-    self._config['options']['plugins']['legend']['display'] = l_d
-
-  @property
-  def legend_position(self):
-    """Select the position of the legend will be displayed"""
-    return self._legend_position
-  
-  @legend_position.setter
-  def legend_position(self, l_p):
-    self._legend_position = l_p
-    self._config['options']['plugins']['legend']['position'] = l_p
-
+  @legend.setter
+  def legend(self, l):
+    self._legend = l
+    self._config['options']['plugins']['legend'] = l
+    
+    # """Give as input a dictionary that configures the legend
+    #   Eg. {'display': True, 'text': 'My Title', 'color': 'red'...}
+    # """
   def form_show(self, **event_args):
     self.clear()
     canvas = Canvas(height=self.height)
