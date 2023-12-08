@@ -14,3 +14,13 @@ properties:
   options: [line, bar, scatter, bubble, doughnut, polarArea, radar]
   default_value: line
 - {name: height, type: number, important: true, default_value: 500}
+- {name: options, type: object, important: true}
+- {name: axis_title, type: object, important: true, description: SOme description}
+- {name: axis_tick_callback, type: object, important: true}
+- {name: legend_display, type: boolean, important: true, default_value: true, group: Legend}
+- name: legend_position
+  type: enum
+  important: true
+  options: [right, left, top, bottom]
+  default_value: right
+  group: Legend

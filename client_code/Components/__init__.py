@@ -38,6 +38,7 @@ CHART_BASIC_CONFIG = {
     'responsive': False,
     'plugins': {
       'legend': {
+        'display': True,
         'position': 'right',
       },
       'title': {
@@ -49,15 +50,13 @@ CHART_BASIC_CONFIG = {
          }
       }
     },
-    'dragData': True,
     'scales': {
-      'yAxes': [{
-        'dragData': False
-      }],
       'y':{
+         'reverse':False,
          'position': 'left',
           'title':{
-            'text':None
+            'display': False,
+            'text': None
           },
          'grid': {
             'display': False
@@ -68,9 +67,17 @@ CHART_BASIC_CONFIG = {
       },
       'x':{
         'reverse':False,
+        'position': 'left',
+        'title':{
+            'display': False,
+            'text':None
+          },
          'grid': {
             'display': False
           },
+        'ticks':{
+          'callbacks':{}
+        }
       },
     }
   },
