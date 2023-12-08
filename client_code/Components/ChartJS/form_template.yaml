@@ -18,3 +18,6 @@ properties:
 - {name: axis_title, type: object, important: true, description: SOme description}
 - {name: axis_tick_callback, type: object, important: true}
 - {name: legend, type: object, important: true}
+- {name: title, type: object, important: true}
+- {name: axis_min, type: object, important: true}
+- {name: axis_max, type: object, important: true}

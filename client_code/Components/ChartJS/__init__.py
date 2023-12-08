@@ -68,6 +68,30 @@ class ChartJS(ChartJSTemplate):
     self._config['options']['scales'][axis]['title'] = {'text':title, 'display': True}
 
   @property
+  def axis_min(self):
+    """Give as input a dictionary with key the axis reference and with value the min value.
+        Eg. {'x': 100} """
+    return self._axis_min
+  
+  @axis_min.setter
+  def axis_min(self, a_m: dict):
+    self._axis_min = a_m
+    axis, min_ = list(a_m.items())[0]
+    self._config['options']['scales'][axis]['min'] = min_
+
+  @property
+  def axis_max(self):
+    """Give as input a dictionary with key the axis reference and with value the max value.
+        Eg. {'x': 100} """
+    return self._axis_max
+  
+  @axis_max.setter
+  def axis_max(self, a_m: dict):
+    self._axis_max = a_m
+    axis, max_ = list(a_m.items())[0]
+    self._config['options']['scales'][axis]['max'] = max_
+
+  @property
   def axis_tick_callback(self):
     """Give as input a dictionary with key the axis reference and with value the callback function.
         Eg. {'x': my_function}"""
@@ -91,10 +115,18 @@ class ChartJS(ChartJSTemplate):
   def legend(self, l):
     self._legend = l
     self._config['options']['plugins']['legend'] = l
+
+  @property
+  def title(self):
+    """Give as input a dictionary that configures the title
+      Eg. {'display': True, 'text': 'My Tile', 'color': 'red', ...}"""
+    return self._title
+  
+  @title.setter
+  def title(self, t):
+    self._title = t
+    self._config['options']['plugins']['title'] = t
     
-    # """Give as input a dictionary that configures the legend
-    #   Eg. {'display': True, 'text': 'My Title', 'color': 'red'...}
-    # """
   def form_show(self, **event_args):
     self.clear()
     canvas = Canvas(height=self.height)
@@ -102,7 +134,6 @@ class ChartJS(ChartJSTemplate):
     ctx = js.get_dom_node(canvas)
     self.chart = Chart(ctx, self._config)
     canvas.add_event_handler('reset', self.chart_reset)
-    # print(dir(self.chart))
 
   def chart_reset(self, **event_args):
     """Render the chart everytime the window sizing is changed."""
