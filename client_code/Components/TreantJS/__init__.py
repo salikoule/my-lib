@@ -87,7 +87,7 @@ class TreantJS(TreantJSTemplate):
         'container': f'#{self.tree_id}',
         'rootOrientation': self.root_orientation,
         'nodeAlign': self.node_align,
-        'levelSeparation':    100,
+        'levelSeparation':    50,
         'siblingSeparation':  20,
         'subTeeSeparation':   20,
         'scrollbar' : self.scrollbar,
