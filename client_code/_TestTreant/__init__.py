@@ -7,8 +7,13 @@ class _TestTreant(_TestTreantTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.first_time = True
+    btn = Button(text='Click me!', role='filled-button')
+    panel = ColumnPanel()
+    btn.set_event_handler('click', self.btn_click)
+    panel.add_component(btn)
     self.node = {
         'text': { 'name': "Parent node" },
+        'innerHTML': anvil.js.get_dom_node(panel).innerHTML,
         'children': [
             {
                 'text': { 'name': "First child" }
@@ -18,16 +23,16 @@ class _TestTreant(_TestTreantTemplate):
             }
         ]
     }
-    self.node = {
-      'text': {'name': 'Start'}, 
-      'children': [
-        {'name': 'Pending', 'children': [{'name': 'Connected', 'children': [{'name': 'Waiting Follow Up Response'}]}, {'name': 'Declined'}]}]}
     self.treant_js_1.node_structure = self.node
     
 
   def form_show(self, **event_args):
     pass
     #self.treant_js_1.node_structure = self.node
+
+  def btn_click(self, **event_args):
+    print('ok')
+    alert('Hello')
 
   def button_1_click(self, **event_args):
     self.node['children'].append({'text': { 'name': "Third child" }})
