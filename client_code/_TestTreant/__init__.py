@@ -1,6 +1,7 @@
 from ._anvil_designer import _TestTreantTemplate
 from anvil import *
 import anvil.server
+from functools import partial
 
 class _TestTreant(_TestTreantTemplate):
   def __init__(self, **properties):
@@ -8,6 +9,8 @@ class _TestTreant(_TestTreantTemplate):
     self.init_components(**properties)
     self.first_time = True
     btn = Button(text='Click me!', role='filled-button')
+    # btn_node = anvil.js.get_dom_node(btn)
+    # btn_node.addEventListener('click', self.btn_click)
     panel = ColumnPanel()
     btn.set_event_handler('click', self.btn_click)
     panel.add_component(btn)
