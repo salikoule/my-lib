@@ -18,6 +18,10 @@ class _TestTreant(_TestTreantTemplate):
             }
         ]
     }
+    self.node = {
+      'text': {'name': 'Start'}, 
+      'children': [
+        {'name': 'Pending', 'children': [{'name': 'Connected', 'children': [{'name': 'Waiting Follow Up Response'}]}, {'name': 'Declined'}]}]}
     self.treant_js_1.node_structure = self.node
     
 
