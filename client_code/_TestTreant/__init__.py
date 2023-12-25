@@ -9,18 +9,18 @@ class _TestTreant(_TestTreantTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.first_time = True
-    lbl = Label(text='Click')
-    btn = Link( icon='fa:repeat')
+    lbl = Label(text='Click', foreground='grey', role='body')
+    btn = Link(icon='fa:repeat', role='body')
     # btn_node = anvil.js.get_dom_node(btn)
     # btn_node.addEventListener('click', self.btn_click)
-    panel = FlowPanel(spacing='none')
+    # panel = FlowPanel(spacing='none', align='left', vertical_align='top')
+    panel = ColumnPanel(wrap_on='never', col_spacing=None)
     # btn.set_event_handler('click', self.btn_click)
     panel.add_component(lbl)
     panel.add_component(btn)
-    print(dir(anvil.js.get_dom_node(btn)))
-    print(anvil.js.get_dom_node(btn).innerHTML)
+    # print(anvil.js.get_dom_node(panel).innerHTML)
     self.node = {
-        'text': { 'name': "Parent node" },
+        'text': { 'name': "Parent node"},
         'innerHTML': anvil.js.get_dom_node(panel).innerHTML,
         'HTMLid':1,
         'children': [
