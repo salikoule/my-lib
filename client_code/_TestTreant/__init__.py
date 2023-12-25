@@ -9,19 +9,25 @@ class _TestTreant(_TestTreantTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.first_time = True
-    lbl = Label(text='Click', foreground='grey', role='body')
+    lbl = Label(text='Click', foreground='grey', role='body', )
     btn = Link(icon='fa:repeat', role='body')
+    # rich = RichText(content='Click{link}', format='restricted_html', align='left')
+    btn.set_event_handler('click', self.btn_click)
+    xy = XYPanel(width=50, height=20)
+    xy.add_component(lbl, x=10, y=0)
+    xy.add_component(btn, x=45, y=0)
+    # rich.add_component(lbl, slot='lable')
     # btn_node = anvil.js.get_dom_node(btn)
     # btn_node.addEventListener('click', self.btn_click)
     # panel = FlowPanel(spacing='none', align='left', vertical_align='top')
-    panel = ColumnPanel(wrap_on='never', col_spacing=None)
+    # panel = ColumnPanel(wrap_on='never', col_spacing=None)
     # btn.set_event_handler('click', self.btn_click)
-    panel.add_component(lbl)
-    panel.add_component(btn)
+    # panel.add_component(lbl)
+    # panel.add_component(btn)
     # print(anvil.js.get_dom_node(panel).innerHTML)
     self.node = {
         'text': { 'name': "Parent node"},
-        'innerHTML': anvil.js.get_dom_node(panel).innerHTML,
+        'innerHTML': anvil.js.get_dom_node(xy).innerHTML,
         'HTMLid':1,
         'children': [
             {
@@ -42,7 +48,7 @@ class _TestTreant(_TestTreantTemplate):
     # print(comp)
     # print(dict(comp['data']['treenode']))
     # print(comp['data']['treenode'])
-    comp.addEventListener('click', self.btn_click)
+    # comp.addEventListener('click', self.btn_click)
 
   def btn_click(self, event):
     alert('Hello')
