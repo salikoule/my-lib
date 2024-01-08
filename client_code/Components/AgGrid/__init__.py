@@ -8,6 +8,7 @@ from anvil.js.window import agGrid
 from anvil.js.window import window
 import uuid
 
+
 class CustomTooltip:
   def __init__(self, **properties):
     print(properties)
@@ -136,6 +137,7 @@ class AgGrid(AgGridTemplate):
     self.flow_panel.clear()
     self.grid_panel = anvil.js.get_dom_node(self.flow_panel)
     self.grid_panel.innerHTML = f'<div id="{self.grid_id}" class="{self.theme}" style="height: {self.height}px"></div>'
+    # self.build_grid()
 
   def build_grid(self):
     if self.grid_panel:
