@@ -189,7 +189,4 @@ class AgGrid(AgGridTemplate):
     print(query)
     return query
 
-  def flow_panel_show(self, **event_args):
-    pass
-
 

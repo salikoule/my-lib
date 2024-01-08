@@ -13,7 +13,7 @@ components:
     col_widths: {}
     grid_position: WTDBSB,IYXVBC
     full_width_row: true
-  event_bindings: {show: flow_panel_show}
+  event_bindings: {}
 is_package: true
 custom_component: true
 properties:
