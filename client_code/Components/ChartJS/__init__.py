@@ -128,6 +128,9 @@ class ChartJS(ChartJSTemplate):
     self._config['options']['plugins']['title'] = t
     
   def form_show(self, **event_args):
+    self.plot_chart()
+
+  def plot_chart(self):
     self.clear()
     canvas = Canvas(height=self.height)
     self.add_component(canvas, full_width_row=True)
