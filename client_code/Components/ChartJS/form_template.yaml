@@ -15,6 +15,7 @@ properties:
 - {name: title, type: object, important: true}
 - {name: axis_min, type: object, important: true}
 - {name: axis_max, type: object, important: true}
+- {name: tooltip, type: object, important: true}
 is_package: true
 toolbox_item:
   icon: {light: 'asset:designer_icons/chartjs-logo (1).svg', dark: 'asset:designer_icons/chartjs-logo

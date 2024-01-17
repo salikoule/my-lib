@@ -126,6 +126,18 @@ class ChartJS(ChartJSTemplate):
   def title(self, t):
     self._title = t
     self._config['options']['plugins']['title'] = t
+
+  @property
+  def tooltip(self):
+    """Give as input a dictionary that configures the tooltip
+      Eg. {'intersect': True, 'callbacks': {'label': label_event_func}, ...}
+    """
+    return self._tooltip
+  
+  @tooltip.setter
+  def tooltip(self, t):
+    self._tooltip = t
+    self._config['options']['plugins']['tooltip'] = t
     
   def form_show(self, **event_args):
     self.plot_chart()
