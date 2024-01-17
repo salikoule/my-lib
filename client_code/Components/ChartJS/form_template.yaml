@@ -17,7 +17,8 @@ properties:
 - {name: axis_max, type: object, important: true}
 is_package: true
 toolbox_item:
-  icon: {light: 'asset:designer_icons/chartjs-logo (1).svg'}
+  icon: {light: 'asset:designer_icons/chartjs-logo (1).svg', dark: 'asset:designer_icons/chartjs-logo
+      (1).svg'}
 custom_component: true
 components: []
 container:

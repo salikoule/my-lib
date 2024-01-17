@@ -9,3 +9,6 @@ components:
   layout_properties: {grid_position: 'VJQJFZ,ESBXMA', full_width_row: true}
 is_package: true
 custom_component: true
+toolbox_item:
+  icon: {light: 'asset:designer_icons/logo.d2a59c1c (1).svg', dark: 'asset:designer_icons/logo.d2a59c1c
+      (1).svg'}

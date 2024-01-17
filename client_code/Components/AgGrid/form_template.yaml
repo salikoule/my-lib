@@ -1,21 +1,3 @@
-container:
-  type: ColumnPanel
-  event_bindings: {show: form_show}
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none,
-    background: ''}
-components:
-- type: FlowPanel
-  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
-    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
-  name: flow_panel
-  layout_properties:
-    col_widths: {}
-    grid_position: WTDBSB,IYXVBC
-    full_width_row: true
-  event_bindings: {}
-is_package: true
-custom_component: true
 properties:
 - {name: height, type: number, default_binding_prop: true, important: true, default_value: 500}
 - name: theme
@@ -45,3 +27,24 @@ properties:
   options: [none, small, medium, large]
   group: LAYOUT
   default_value: small
+is_package: true
+toolbox_item:
+  icon: {light: 'asset:designer_icons/200pxArtboard-5 (1).png', dark: 'asset:designer_icons/200pxArtboard-5
+      (1).png'}
+custom_component: true
+components:
+- type: FlowPanel
+  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
+    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+  name: flow_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: WTDBSB,IYXVBC
+    full_width_row: true
+  event_bindings: {}
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none,
+    background: ''}
