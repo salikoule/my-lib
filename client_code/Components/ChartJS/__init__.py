@@ -68,6 +68,19 @@ class ChartJS(ChartJSTemplate):
     self._config['options']['scales'][axis]['title'] = {'text':title, 'display': True}
 
   @property
+  def axis_stacked(self):
+    """Give as input a dictionary with key the axis reference and with value a bool.
+        Eg. {'x': True} """
+    return self._axis_stacked
+  
+  @axis_stacked.setter
+  def axis_stacked(self, a_s: dict):
+    self._axis_stacked = a_s
+    axis, stacked = list(a_s.items())[0]
+    print(axis, stacked)
+    self._config['options']['scales'][axis]['stacked'] = stacked
+
+  @property
   def axis_min(self):
     """Give as input a dictionary with key the axis reference and with value the min value.
         Eg. {'x': 100} """
