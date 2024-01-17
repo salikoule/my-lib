@@ -17,7 +17,7 @@ properties:
 - {name: axis_max, type: object, important: true}
 is_package: true
 toolbox_item:
-  icon: {light: 'https://www.chartjs.org/img/chartjs-logo.svg'}
+  icon: {light: 'asset:designer_icons/chartjs-logo (1).svg'}
 custom_component: true
 components: []
 container:
