@@ -27,7 +27,7 @@ unique_ids:
     Utils.nanoid: '1681959305415668730954887.6808'
     Utils.validate: '1696581546856343257799457.66797'
   server_modules:
-    ServerModule1: '1695706799144769461957325.5131'
+    ServUtils: '1695706799144769461957325.5131'
   assets:
     img/cartilaginousfish.png: JDYWXTLOGHPBG4MMWOREUJ26JKCRHBAQ
     img/cvijece2.png: S7K7CIS6ZTOI4RD7JJ3N4QSULQ6JGUHS
