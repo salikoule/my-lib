@@ -11,7 +11,7 @@ class _TestChartJS(_TestChartJSTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    print(dir(window))
+    # print(dir(window))
 
     self.chart_js.labels = [50,60,70,80,90,100,110,120,130,140,150]
     self.chart_js.datasets = [{
