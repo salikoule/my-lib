@@ -32,7 +32,7 @@ CHART_BASIC_CONFIG = {
     'indexAxis': 'x',
     'elements': {
       'bar': {
-        'borderWidth': 2,
+        'borderWidth': 0,
       }
     },
     'responsive': False,
