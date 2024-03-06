@@ -6,11 +6,15 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: _TreantJsExample}
+startup: {type: form, module: Form2}
 package_name: Craftify
 allow_embedding: false
 name: Craftify
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: {base: python310-standard}
 metadata: {title: Craftify Custom Components}
 startup_form: null
 native_deps: {head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.min.js\"\
