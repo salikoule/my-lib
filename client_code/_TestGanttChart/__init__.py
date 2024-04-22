@@ -58,7 +58,7 @@ class _TestGanttChart(_TestGanttChartTemplate):
 				'name': 'Go Live!',
 				'id': "Task 5",
 				'progress': 0,
-				'dependencies': 'Task 4',
+				'dependencies': ['Task 4', 'Task 3'],
 				'custom_class': 'bar-milestone'
 			},
 			# {
