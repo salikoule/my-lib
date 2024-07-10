@@ -10,5 +10,4 @@ components:
 is_package: true
 custom_component: true
 toolbox_item:
-  icon: {light: 'asset:designer_icons/logo.d2a59c1c (1).svg', dark: 'asset:designer_icons/logo.d2a59c1c
-      (1).svg'}
+  icon: {light: 'asset:designer_icons/logo.d2a59c1c (1).svg', dark: 'asset:designer_icons/logo.d2a59c1c (1).svg'}

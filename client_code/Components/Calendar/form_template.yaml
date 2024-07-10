@@ -4,10 +4,7 @@ container:
   event_bindings: {show: form_show}
 components:
 - type: Button
-  properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Add event, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
+  properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true, foreground: '', visible: true, text: Add event, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: button_1
   layout_properties: {grid_position: 'OVTHEI,ANLBVP'}
   event_bindings: {click: button_1_click}
@@ -18,5 +15,4 @@ components:
 is_package: true
 custom_component: true
 toolbox_item:
-  icon: {light: 'asset:designer_icons/13825204 (1).png', dark: 'asset:designer_icons/13825204
-      (1).png'}
+  icon: {light: 'asset:designer_icons/13825204 (1).png', dark: 'asset:designer_icons/13825204 (1).png'}

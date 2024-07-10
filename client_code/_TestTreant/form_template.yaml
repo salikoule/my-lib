@@ -4,16 +4,12 @@ container:
   event_bindings: {show: form_show}
 components:
 - type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Add Child, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true, foreground: '', visible: true, text: Add Child, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: button_1
   layout_properties: {grid_position: 'IBYEFI,YOLZBH'}
   event_bindings: {click: button_1_click}
 - type: form:Components.TreantJS
-  properties: {root_orientation: NORTH, node_align: BOTTOM, connectors: curve, scrollbar: fancy,
-    height: 200, width: 500, animate_on_init: false}
+  properties: {root_orientation: NORTH, node_align: BOTTOM, connectors: curve, scrollbar: fancy, height: 200, width: 500, animate_on_init: false}
   name: treant_js_1
   layout_properties: {grid_position: 'TSJHFF,WJEALO'}
 - name: rich_text_1

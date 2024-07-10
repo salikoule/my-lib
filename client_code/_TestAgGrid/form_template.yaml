@@ -4,8 +4,7 @@ container:
   event_bindings: {show: form_show}
 components:
 - type: form:Components.AgGrid
-  properties: {height: 500, theme: ag-theme-alpine, pagination: true, pagination_page_size: 25,
-    sidebar: true, row_selection: single}
+  properties: {height: 500, theme: ag-theme-alpine, pagination: true, pagination_page_size: 25, sidebar: true, row_selection: single}
   name: ag_grid_1
   layout_properties: {grid_position: 'YQZKAE,HUKRIQ'}
 is_package: true

@@ -3,8 +3,7 @@ properties:
 - name: theme
   type: enum
   important: true
-  options: [ag-theme-material, ag-theme-alpine, ag-theme-alpine-dark, ag-theme-balham,
-    ag-theme-balham-dark]
+  options: [ag-theme-material, ag-theme-alpine, ag-theme-alpine-dark, ag-theme-balham, ag-theme-balham-dark]
   default_value: ag-theme-material
 - {name: grid_options, type: object, important: true}
 - {name: pagination, type: boolean, default_value: true, important: true}
@@ -29,13 +28,11 @@ properties:
   default_value: small
 is_package: true
 toolbox_item:
-  icon: {light: 'asset:designer_icons/200pxArtboard-5 (1).png', dark: 'asset:designer_icons/200pxArtboard-5
-      (1).png'}
+  icon: {light: 'asset:designer_icons/200pxArtboard-5 (1).png', dark: 'asset:designer_icons/200pxArtboard-5 (1).png'}
 custom_component: true
 components:
 - type: FlowPanel
-  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
-    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '', foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
   name: flow_panel
   layout_properties:
     col_widths: {}
@@ -45,6 +42,4 @@ components:
 container:
   type: ColumnPanel
   event_bindings: {show: form_show}
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none,
-    background: ''}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none, background: ''}
