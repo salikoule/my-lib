@@ -1,22 +1,22 @@
+allow_embedding: false
 dependencies:
 - dep_id: dep_831y34sp6w9nu
-  version: {dev: false}
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-startup: {type: form, module: _TestChartJS}
-package_name: Craftify
-allow_embedding: false
-name: Craftify
-runtime_options:
-  version: 2
-  client_version: '3'
-  server_version: python3-full
-  server_spec: {base: python310-standard}
+  version: {dev: false}
 metadata: {title: Craftify Custom Components}
-startup_form: null
+name: Craftify
 native_deps:
   head_html: "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.min.js\"></script>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.6.1/frappe-gantt.css\">\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/shortid/2.2.16/index.js\"></script>\n\n<script src=\"https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js\"></script>\n\n\n<script src=\"https://unpkg.com/@ag-grid-enterprise/all-modules@25.3.0/dist/ag-grid-enterprise.min.js\"></script>\n<link rel=\"stylesheet\" href=\"https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css\">\n<link rel=\"stylesheet\" href=\"https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css\"> \n\n\n<script src=\"https://cdn.jsdelivr.net/npm/@editorjs/header@latest\"></script><!-- Header -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest\"></script><!-- Image -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest\"></script><!-- Delimiter -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/list@latest\"></script><!-- List -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest\"></script><!-- Checklist -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/quote@latest\"></script><!-- Quote -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/code@latest\"></script><!-- Code -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/embed@latest\"></script><!-- Embed -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/table@latest\"></script><!-- Table -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/link@latest\"></script><!-- Link -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/warning@latest\"></script><!-- Warning -->\n\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/marker@latest\"></script><!-- Marker -->\n  <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest\"></script><!-- Inline Code -->\n\n    <script src=\"https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest\"></script>\n\n\n\n<!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.js\"></script>-->\n<link rel=\"stylesheet\" href=\"_/theme/Treant.css\" type=\"text/css\"/>\n<script src=\"_/theme/vendor/raphael.js\"></script>\n<script src=\"_/theme/Treant.js\"></script>\n\n\n<!-- include this files if \"fancy\" is set -->\n<link href=\"_/theme/vendor/perfect-scrollbar/perfect-scrollbar.css\" rel=\"stylesheet\" type=\"text/css\"/>\n<!--<script src=\"_/theme/vendor/jquery.min.js\"></script>\n<script src=\"_/theme/vendor/jquery.mousewheel.js\"></script>-->\n<script src=\"_/theme/vendor/perfect-scrollbar/perfect-scrollbar.js\"></script>\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"></script>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\" />\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@1.0.0/dist/chartjs-plugin-dragdata.min.js\"></script>\n"
+package_name: Craftify
 renamed: true
+runtime_options:
+  client_version: '3'
+  server_spec: {base: python310-standard}
+  server_version: python3-full
+  version: 2
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+startup: {module: _TestChartJS, type: form}
+startup_form: null

@@ -1,25 +1,25 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
-  event_bindings: {show: form_show}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - type: Button
-    properties: {text: button_1}
-    name: button_1
+- components:
+  - event_bindings: {click: button_1_click}
     layout_properties: {grid_position: 'NOPZIF,HCOXUZ'}
-    event_bindings: {click: button_1_click}
-  - type: form:Components.GanttChart
-    properties: {view_mode: Quarter Day}
+    name: button_1
+    properties: {text: button_1}
+    type: Button
+  - event_bindings: {}
+    layout_properties: {full_width_row: true, grid_position: 'DMIBXV,EXEQDT'}
     name: gantt_chart_1
-    layout_properties: {grid_position: 'DMIBXV,EXEQDT', full_width_row: true}
-    event_bindings: {}
-- type: FlowPanel
-  properties: {}
+    properties: {view_mode: Quarter Day}
+    type: form:Components.GanttChart
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
+  properties: {}
+  type: FlowPanel
+container:
+  event_bindings: {show: form_show}
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

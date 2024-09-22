@@ -1,24 +1,24 @@
-properties:
-- {name: hour, type: number, default_value: '', default_binding_prop: true}
-- {name: error_color, type: color, default_value: '#ff0000'}
-- {name: default_color, type: color, default_value: '#000000'}
-- {name: use_background_for_error, type: boolean, default_value: false}
-- {name: minutes, type: number, default_value: ''}
-is_package: true
-events:
-- {name: pressed_enter, default_event: true}
-- {name: change}
-- {name: lost_focus}
-custom_component: true
 components:
-- type: TextBox
-  properties: {role: outlined, align: right, hide_text: false, tooltip: '', placeholder: '00:00', border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, type: text, spacing_below: small, italic: false, background: '', bold: false, underline: false}
-  name: time_input
+- event_bindings: {change: time_input_change, lost_focus: time_input_lost_focus, pressed_enter: time_input_pressed_enter}
   layout_properties:
     col_widths: {}
-    grid_position: CJDNJN,IBNRWM
     full_width_row: true
-  event_bindings: {lost_focus: time_input_lost_focus, change: time_input_change, pressed_enter: time_input_pressed_enter}
+    grid_position: CJDNJN,IBNRWM
+  name: time_input
+  properties: {align: right, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '00:00', role: outlined, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+  type: TextBox
 container:
+  properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: none, tooltip: '', visible: true, wrap_on: mobile}
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none, background: ''}
+custom_component: true
+events:
+- {default_event: true, name: pressed_enter}
+- {name: change}
+- {name: lost_focus}
+is_package: true
+properties:
+- {default_binding_prop: true, default_value: '', name: hour, type: number}
+- {default_value: '#ff0000', name: error_color, type: color}
+- {default_value: '#000000', name: default_color, type: color}
+- {default_value: false, name: use_background_for_error, type: boolean}
+- {default_value: '', name: minutes, type: number}

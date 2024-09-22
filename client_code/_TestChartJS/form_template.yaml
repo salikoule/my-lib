@@ -1,14 +1,14 @@
-container:
-  type: ColumnPanel
-  event_bindings: {show: form_show}
 components:
-- name: button_1
-  properties: {text: Real-time, role: filled-button}
-  type: Button
+- event_bindings: {click: button_1_click}
   layout_properties: {grid_position: 'AIATWX,NUENYE'}
-  event_bindings: {click: button_1_click}
-- name: chart_js
+  name: button_1
+  properties: {role: filled-button, text: Real-time}
+  type: Button
+- layout_properties: {grid_position: 'WCWJGC,XHLHOS'}
+  name: chart_js
   properties: {type: line}
   type: form:Components.ChartJS
-  layout_properties: {grid_position: 'WCWJGC,XHLHOS'}
+container:
+  event_bindings: {show: form_show}
+  type: ColumnPanel
 is_package: true

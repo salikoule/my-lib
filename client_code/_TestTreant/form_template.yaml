@@ -1,19 +1,19 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{}'}
-  event_bindings: {show: form_show}
 components:
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true, foreground: '', visible: true, text: Add Child, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: button_1
+- event_bindings: {click: button_1_click}
   layout_properties: {grid_position: 'IBYEFI,YOLZBH'}
-  event_bindings: {click: button_1_click}
-- type: form:Components.TreantJS
-  properties: {root_orientation: NORTH, node_align: BOTTOM, connectors: curve, scrollbar: fancy, height: 200, width: 500, animate_on_init: false}
+  name: button_1
+  properties: {align: center, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: filled-button, spacing_above: small, spacing_below: small, text: Add Child, tooltip: '', underline: false, visible: true}
+  type: Button
+- layout_properties: {grid_position: 'TSJHFF,WJEALO'}
   name: treant_js_1
-  layout_properties: {grid_position: 'TSJHFF,WJEALO'}
-- name: rich_text_1
+  properties: {animate_on_init: false, connectors: curve, height: 200, node_align: BOTTOM, root_orientation: NORTH, scrollbar: fancy, width: 500}
+  type: form:Components.TreantJS
+- layout_properties: {grid_position: 'QXVMOV,FQKPQS'}
+  name: rich_text_1
   properties: {}
   type: RichText
-  layout_properties: {grid_position: 'QXVMOV,FQKPQS'}
+container:
+  event_bindings: {show: form_show}
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
 is_package: true

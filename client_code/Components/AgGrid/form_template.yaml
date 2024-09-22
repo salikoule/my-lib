@@ -1,45 +1,45 @@
-properties:
-- {name: height, type: number, default_binding_prop: true, important: true, default_value: 500}
-- name: theme
-  type: enum
-  important: true
-  options: [ag-theme-material, ag-theme-alpine, ag-theme-alpine-dark, ag-theme-balham, ag-theme-balham-dark]
-  default_value: ag-theme-material
-- {name: grid_options, type: object, important: true}
-- {name: pagination, type: boolean, default_value: true, important: true}
-- {name: pagination_page_size, type: number, important: true, default_value: 25}
-- {name: sidebar, type: boolean, important: true, default_value: true}
-- name: row_selection
-  type: enum
-  important: true
-  options: [single, multiple]
-  default_value: single
-- name: spacing_above
-  type: enum
-  important: true
-  options: [none, small, medium, large]
-  group: LAYOUT
-  default_value: small
-- name: spacing_below
-  type: enum
-  important: true
-  options: [none, small, medium, large]
-  group: LAYOUT
-  default_value: small
-is_package: true
-toolbox_item:
-  icon: {light: 'asset:designer_icons/200pxArtboard-5 (1).png', dark: 'asset:designer_icons/200pxArtboard-5 (1).png'}
-custom_component: true
 components:
-- type: FlowPanel
-  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '', foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
-  name: flow_panel
+- event_bindings: {}
   layout_properties:
     col_widths: {}
-    grid_position: WTDBSB,IYXVBC
     full_width_row: true
-  event_bindings: {}
+    grid_position: WTDBSB,IYXVBC
+  name: flow_panel
+  properties: {align: left, background: '', border: '', foreground: '', role: null, spacing: medium, spacing_above: small, spacing_below: small, tooltip: '', visible: true}
+  type: FlowPanel
 container:
-  type: ColumnPanel
   event_bindings: {show: form_show}
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: none, background: ''}
+  properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: none, tooltip: '', visible: true, wrap_on: mobile}
+  type: ColumnPanel
+custom_component: true
+is_package: true
+properties:
+- {default_binding_prop: true, default_value: 500, important: true, name: height, type: number}
+- default_value: ag-theme-material
+  important: true
+  name: theme
+  options: [ag-theme-material, ag-theme-alpine, ag-theme-alpine-dark, ag-theme-balham, ag-theme-balham-dark]
+  type: enum
+- {important: true, name: grid_options, type: object}
+- {default_value: true, important: true, name: pagination, type: boolean}
+- {default_value: 25, important: true, name: pagination_page_size, type: number}
+- {default_value: true, important: true, name: sidebar, type: boolean}
+- default_value: single
+  important: true
+  name: row_selection
+  options: [single, multiple]
+  type: enum
+- default_value: small
+  group: LAYOUT
+  important: true
+  name: spacing_above
+  options: [none, small, medium, large]
+  type: enum
+- default_value: small
+  group: LAYOUT
+  important: true
+  name: spacing_below
+  options: [none, small, medium, large]
+  type: enum
+toolbox_item:
+  icon: {dark: 'asset:designer_icons/200pxArtboard-5 (1).png', light: 'asset:designer_icons/200pxArtboard-5 (1).png'}
