@@ -28,17 +28,17 @@ class DatetimeHandler():
     def date_format(self, dformat):
         self._date_format = DEFAULT_DATE_FORMAT if not dformat or remove_trailing_spaces(dformat) == '' else dformat
 
-    def get_utc_datetime_now(self) -> datetime:
-        """
-        Returns the current date and time in UTC.
+    # def get_utc_datetime_now(self) -> datetime:
+    #     """
+    #     Returns the current date and time in UTC.
 
-        This method retrieves the current date and time in Coordinated Universal Time (UTC)
-        using the `datetime` module and the `pytz` library.
+    #     This method retrieves the current date and time in Coordinated Universal Time (UTC)
+    #     using the `datetime` module and the `pytz` library.
 
-        Returns:
-            datetime: The current UTC date and time.
-        """
-        return datetime.now(pytz.utc)
+    #     Returns:
+    #         datetime: The current UTC date and time.
+    #     """
+    #     return datetime.now(pytz.utc)
 
     def get_datetime_now(self) -> datetime:
         """
