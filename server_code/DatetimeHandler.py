@@ -138,3 +138,12 @@ class DatetimeHandler():
             date: The date that is `n` days before the given date.
         """
         return _date - timedelta(days=n)
+
+    def get_all_timezones(self) -> list:
+        """
+        Get a list of all available timezones.
+
+        Returns:
+            list: A list of all available timezones.
+        """
+        return pytz.all_timezones
