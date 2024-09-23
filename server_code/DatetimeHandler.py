@@ -125,3 +125,16 @@ class DatetimeHandler():
             if _date.weekday() in weekdays:
                 count += 1
         return _date
+
+    def get_date_n_days_before(self, _date: date = None, n: int = 0) -> date:
+        """
+        Gets the date that is `n` days before the given date.
+
+        Args:
+            date (date): The starting date. Defaults to None.
+            n (int): The number of days to go back. Defaults to 0.
+
+        Returns:
+            date: The date that is `n` days before the given date.
+        """
+        return _date - timedelta(days=n)
