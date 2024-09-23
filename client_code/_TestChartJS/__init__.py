@@ -5,6 +5,8 @@ from .. import Utils
 import random
 import time
 from anvil.js import window
+from ..DatetimeHandlerClient import DatetimeHandler as dh
+
 
 class _TestChartJS(_TestChartJSTemplate):
   def __init__(self, **properties):
@@ -12,6 +14,12 @@ class _TestChartJS(_TestChartJSTemplate):
     self.init_components(**properties)
 
     # print(dir(window))
+    dt = dh().get_local_datetime_now()
+    print(dt)
+    dt = dh().get_utc_datetime_now()
+    print(dt)
+    print(dh().convert_utc_to_local(dt))
+    print(dh().datetime_to_pretty(dt))
 
     self.chart_js.labels = [50,60,70,80,90,100,110,120,130,140,150]
     self.chart_js.datasets = [{
