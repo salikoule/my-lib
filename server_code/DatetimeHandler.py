@@ -148,6 +148,29 @@ class DatetimeHandler():
         """
         return pytz.all_timezones
 
+    def interval_past(self, _datetime: datetime, interval: int, unit: str) -> datetime:
+        """
+        Get the datetime that is `interval` units before the given datetime.
+
+        Args:
+            _datetime (datetime): The starting datetime.
+            interval (int): The number of units to go back.
+            unit (str): The unit of time to go back by. Can be 'days', 'hours', 'minutes', or 'seconds'.
+
+        Returns:
+            datetime: The datetime that is `interval` units before the given datetime.
+        """
+        if unit == 'days':
+            return _datetime - timedelta(days=interval)
+        elif unit == 'hours':
+            return _datetime - timedelta(hours=interval)
+        elif unit == 'minutes':
+            return _datetime - timedelta(minutes=interval)
+        elif unit == 'seconds':
+            return _datetime - timedelta(seconds=interval)
+        else:
+            return None
+
     def units_passed(self, _datetime: datetime, unit: str) -> datetime:
         """
         Calculate the number of specified time units passed since a given datetime.
