@@ -147,3 +147,29 @@ class DatetimeHandler():
             list: A list of all available timezones.
         """
         return pytz.all_timezones
+
+    def units_passed(self, _datetime: datetime, unit: str) -> datetime:
+        """
+        Calculate the number of specified time units passed since a given datetime.
+        Args:
+            _datetime (datetime): The starting datetime to compare against the current datetime.
+            unit (str): The unit of time to calculate the difference in. 
+                        Must be one of 'days', 'hours', 'minutes', or 'seconds'.
+        Returns:
+            datetime: The number of specified time units passed since the given datetime.
+        Raises:
+            ValueError: If the unit is not one of 'days', 'hours', 'minutes', or 'seconds'.
+        """
+        now = self.get_datetime_now()
+        time_difference = now - _datetime
+
+        if unit == 'days':
+            return time_difference.days
+        elif unit == 'hours':
+            return time_difference.total_seconds() // 3600
+        elif unit == 'minutes':
+            return time_difference.total_seconds() // 60
+        elif unit == 'seconds':
+            return time_difference.total_seconds()
+        else:
+            raise ValueError("Unit must be 'days', 'hours', 'minutes', or 'seconds'.")
