@@ -1,12 +1,14 @@
 from ._anvil_designer import InputTemplate
 from anvil import *
 import anvil.server
+from anvil_extras.MultiSelectDropDown import MultiSelectDropDown
 
 # add value properties for convenience
 DatePicker.value = property(lambda self: self.date, lambda self, val: setattr(self, "date", val))
 TextBox.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
 DropDown.value = property(lambda self: self.selected_value, lambda self, val: setattr(self, "selected_value", val))
 TextArea.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
+MultiSelectDropDown.value = property(lambda self: self.selected, lambda self, val: setattr(self, "selected", val))
 
 class Input(InputTemplate):
   def __init__(self, error=None, type="text", key="", **properties):
@@ -23,6 +25,8 @@ class Input(InputTemplate):
       self.input = DatePicker(**self.prop)
     elif self.type == "drop_down":
       self.input = DropDown(**self.prop)
+    elif self.type == "multi_drop_down":
+      self.input = MultiSelectDropDown(**self.prop)
     elif self.type == "text_area":
       self.input = TextArea(**self.prop)
     else:
