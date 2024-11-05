@@ -46,10 +46,13 @@ class Input(InputTemplate):
   def error(self, error):
     self._error = error
     if not error:
-      self.error_label.text = " "
+      self.error_label.text = None
+      # self.error_label.visible = False
     else:
       # print(error, error.errors(self.key))
-      self.error_label.text = "\n".join(error.errors(self.key)) or " "
+      self.error_label.text = "\n".join(error.errors(self.key)) or None
+    
+    self.error_label.visible = False if not self.error_label.text or self.error_label.text.strip() == '' else True
 
   @property
   def value(self):
