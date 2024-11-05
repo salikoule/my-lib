@@ -8,49 +8,51 @@ components:
   properties: {align: left, background: '', bold: true, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
   type: Label
 - components:
-  - layout_properties: {expand: true, grid_position: 'YKHYBE,UNFQLY', width: null}
-    name: input_placeholder
+  - components:
+    - layout_properties: {expand: true, grid_position: 'YKHYBE,UNFQLY', width: null}
+      name: input_placeholder
+      properties:
+        align: left
+        background: ''
+        bold: false
+        border: ''
+        enabled: true
+        font: ''
+        font_size: null
+        foreground: ''
+        hide_text: false
+        italic: false
+        margin: [null, null, '0', null]
+        placeholder: ''
+        role: outlined
+        spacing_above: none
+        spacing_below: none
+        text: ''
+        tooltip: ''
+        type: text
+        underline: false
+        visible: true
+      type: TextBox
+    name: input_panel
+    properties: {align: left, background: '', border: '', foreground: '', role: null, spacing: medium, spacing_above: none, spacing_below: none, tooltip: '', visible: true}
+    type: FlowPanel
+  - event_bindings: {click: link_hide_text_click}
+    layout_properties: {}
+    name: link_hide_text
     properties:
-      align: left
-      background: ''
-      bold: false
-      border: ''
-      enabled: true
-      font: ''
-      font_size: null
-      foreground: ''
-      hide_text: false
-      italic: false
-      margin: [null, null, '0', null]
-      placeholder: ''
-      role: outlined
+      col_spacing: tiny
+      icon: fa:eye
+      spacing:
+        margin: [null, null, '0', null]
+        padding: ['10', null, null, null]
       spacing_above: none
       spacing_below: none
-      text: ''
-      tooltip: ''
-      type: text
-      underline: false
-      visible: true
-    type: TextBox
-  layout_properties:
-    col_widths: {}
-    full_width_row: true
-    grid_position: OWYCEP,YBXHGV
-  name: input_panel
-  properties: {align: left, background: '', border: '', foreground: '', role: null, spacing: medium, spacing_above: none, spacing_below: none, tooltip: '', visible: true}
+      visible: false
+    type: Link
+  layout_properties: {full_width_row: true, grid_position: 'GWECYV,GCFNHT'}
+  name: flow_panel_1
+  properties: {gap: tiny, spacing_above: none, spacing_below: none}
   type: FlowPanel
-- event_bindings: {click: link_hide_text_click}
-  layout_properties: {grid_position: 'OWYCEP,TJBYYA'}
-  name: link_hide_text
-  properties:
-    col_spacing: tiny
-    icon: fa:eye
-    spacing:
-      margin: [null, null, '0', null]
-    spacing_above: none
-    spacing_below: none
-    visible: false
-  type: Link
 - layout_properties:
     col_widths: {}
     full_width_row: true
@@ -63,14 +65,14 @@ container:
     background: ''
     border: ''
     col_spacing: tiny
-    col_widths: '{"YBXHGV":58,"TJBYYA":2}'
+    col_widths: '{}'
     foreground: ''
     role: null
     spacing:
       margin: [null, null, '0', null]
     spacing_above: none
     spacing_below: none
-    tooltip: ''
+    tooltip: unhide
     visible: true
     wrap_on: mobile
   type: ColumnPanel

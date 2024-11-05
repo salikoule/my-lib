@@ -75,6 +75,7 @@ class Input(InputTemplate):
     sender = event_args['sender']
     hide_text = not sender.tag
     sender.tag = hide_text
-    self.input_placeholder.hide_text = hide_text
+    self.input.hide_text = hide_text
     sender.icon = 'fa:eye' if hide_text else 'fa:eye-slash'
+    sender.tooltip = 'unhide' if hide_text else 'hide'
     
