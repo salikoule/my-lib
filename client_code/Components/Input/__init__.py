@@ -31,6 +31,8 @@ class Input(InputTemplate):
       self.input = TextArea(**self.prop)
     else:
       self.input = TextBox(**self.prop)
+      self.link_hide_text.visible = self.prop.get('hide_text', False)
+      self.link_hide_text.tag = self.prop.get('hide_text', False)
 
     if self.prerequisites:
       self.visible = False
@@ -47,11 +49,8 @@ class Input(InputTemplate):
     self._error = error
     if not error:
       self.error_label.text = None
-      # self.error_label.visible = False
     else:
-      # print(error, error.errors(self.key))
       self.error_label.text = "\n".join(error.errors(self.key)) or None
-    
     self.error_label.visible = False if not self.error_label.text or self.error_label.text.strip() == '' else True
 
   @property
@@ -71,3 +70,11 @@ class Input(InputTemplate):
       value = event_args.get('value', None)
       if key in self.prerequisites:
         self.visible = True if value in self.prerequisites[key] else False
+
+  def link_hide_text_click(self, **event_args):
+    sender = event_args['sender']
+    hide_text = not sender.tag
+    sender.tag = hide_text
+    self.input_placeholder.hide_text = hide_text
+    sender.icon = 'fa:eye' if hide_text else 'fa:eye-slash'
+    
