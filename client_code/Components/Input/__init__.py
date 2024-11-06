@@ -31,14 +31,18 @@ class Input(InputTemplate):
       self.input = TextArea(**self.prop)
     else:
       self.input = TextBox(**self.prop)
-      self.link_hide_text.visible = self.prop.get('hide_text', False)
-      self.link_hide_text.tag = self.prop.get('hide_text', False)
+      self.setup_hide_link()
 
     if self.prerequisites:
       self.visible = False
 
     self.input_panel.add_component(self.input, expand=True)
     self.input.add_event_handler("change", self.change)
+
+  def setup_hide_link(self):
+    self.link_hide_text.visible = self.prop.get('hide_text', False)
+    self.link_hide_text.tag = self.prop.get('hide_text', False)
+    self.link_hide_text.tooltip = 'unhide' if self.prop.get('hide_text', False) else None
 
   @property
   def error(self):
