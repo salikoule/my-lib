@@ -72,7 +72,7 @@ container:
       margin: [null, null, '0', null]
     spacing_above: none
     spacing_below: none
-    tooltip: unhide
+    tooltip: ''
     visible: true
     wrap_on: mobile
   type: ColumnPanel

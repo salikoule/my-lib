@@ -2,7 +2,7 @@ allow_embedding: false
 dependencies:
 - dep_id: dep_831y34sp6w9nu
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
-  version: {dev: false}
+  version: {version_tag: v2.7.1}
 metadata: {title: Craftify Custom Components}
 name: Craftify
 native_deps:
