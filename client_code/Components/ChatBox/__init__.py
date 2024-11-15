@@ -6,5 +6,59 @@ class ChatBox(ChatBoxTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.conversation = [1]
 
-    # Any code you write here will run before the form opens.
+  @property
+  def db(self):
+    return self._db
+  
+  @db.setter
+  def db(self, d):
+    self._db = d
+
+  @property
+  def user(self):
+    return self._user
+  
+  @user.setter
+  def user(self, u):
+    self._user = u
+
+  @property
+  def conversation(self):
+    return self._conversation
+  
+  @conversation.setter
+  def conversation(self, c):
+    self._conversation = c if c else []
+
+  def form_show(self, **event_args):
+    self.chat_panel.items = self.conversation
+    self.go_to_bottom()
+  
+  def go_to_bottom(self):
+    """Moves the scroll to the last element of the repeating panel"""
+    chat_area = anvil.js.get_dom_node(self.chat_panel)
+    chat_area.scrollTop = chat_area.scrollHeight
+
+  def text_message_change(self, **event_args):
+    """This method is called when the text in this text area is edited"""
+    pass
+
+  def button_send_click(self, **event_args):
+    """Adds the content of the quil to repeating_panel, database and sends email"""
+    if 'content' in self.item:
+      self.item['created'] = datetime.utcnow()
+      self.new_message.update(**self.item)
+      if self.repeating_panel_1.items is None:
+        #In case is the first comment
+        self.repeating_panel_1.items = [self.new_message]
+      else:
+        #Appends last comment to the repeating panel
+        self.repeating_panel_1.items = list(self.repeating_panel_1.items) + [self.new_message]
+      self.quill_1.content = None
+      self.file_loader_1.clear()
+      self.go_to_bottom()
+      self.raise_event('x-send_event')
+      self.new_message = globals.get_comments_schema().copy()
+      self.refresh_data_bindings()

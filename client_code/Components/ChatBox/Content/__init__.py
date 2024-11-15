@@ -8,10 +8,11 @@ from ....Utils import convert
 
 class Content(ContentTemplate):
   def __init__(self, **properties):
-    self.init_db()
-    self.init_defaults()
+    # self.init_db()
+    # self.init_defaults()
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
     
   def init_db(self):
     """Getting and instance of the database"""
@@ -23,8 +24,9 @@ class Content(ContentTemplate):
     self.gb = globals
 
   def form_show(self, **event_args):
-    self.format_datetime()
-    self.refresh_data_bindings()
+    pass
+    # self.format_datetime()
+    # self.refresh_data_bindings()
 
   def format_datetime(self):
     """Formats the label text to pretty date"""
