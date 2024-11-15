@@ -6,7 +6,7 @@ class ChatBox(ChatBoxTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.conversation = [1]
+    self.conversation = []
 
   @property
   def db(self):

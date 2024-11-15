@@ -11,12 +11,15 @@ class Content(ContentTemplate):
     # self.init_db()
     # self.init_defaults()
     # Set Form properties and Data Bindings.
+    self.user = None
     self.init_components(**properties)
+    
 
   def form_show(self, **event_args):
-    pass
+    self.user = self.parent.parent.user
+    print(self.parent.parent.user)
     # self.format_datetime()
-    # self.refresh_data_bindings()
+    self.refresh_data_bindings()
 
   def format_datetime(self):
     """Formats the label text to pretty date"""
