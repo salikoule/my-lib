@@ -10,20 +10,12 @@ components:
 - components:
   - components:
     - data_bindings:
-      - {code: 'f"{self.item[''user''].split(''@'')[0]} - [Internal]" if ''internal'' in self.item and self.item[''internal''] is True  else self.item[''user''].split(''@'')[0]', property: text}
-      - {code: '"fa:user-secret" if ''internal'' in self.item and self.item[''internal''] is True  else None', property: icon}
+      - {code: 'self.item[''user'']', property: text, writeback: false}
       layout_properties: {full_width_row: true, grid_position: 'CEXFNW,PGHTAL'}
       name: label_name
       properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:On Primary', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
       type: Label
     - components:
-      - data_bindings:
-        - {code: 'True if self.item[''attachment''] is not None else False', property: visible}
-        event_bindings: {click: link_1_click}
-        layout_properties: {full_width_row: true, grid_position: 'CEXFNW,HPFPJL'}
-        name: link_1
-        properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: 'theme:On Primary', icon: 'fa:paperclip', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: Download attachment, underline: false, url: '', visible: true, wrap_on: mobile}
-        type: Link
       - data_bindings:
         - {code: 'self.gb.convert_to_local_time(self.item[''created''])', property: tooltip}
         layout_properties: {full_width_row: true, grid_position: 'CEXFNW,JITMJE'}
