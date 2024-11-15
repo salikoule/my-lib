@@ -17,7 +17,6 @@ class Content(ContentTemplate):
 
   def form_show(self, **event_args):
     self.user = self.parent.parent.user
-    print(self.parent.parent.user)
     # self.format_datetime()
     self.refresh_data_bindings()
 

@@ -48,17 +48,26 @@ class ChatBox(ChatBoxTemplate):
   def button_send_click(self, **event_args):
     """Adds the content of the quil to repeating_panel, database and sends email"""
     if 'content' in self.item:
-      self.item['created'] = datetime.utcnow()
-      self.new_message.update(**self.item)
-      if self.repeating_panel_1.items is None:
+      # self.item['created'] = datetime.utcnow()
+      # self.new_message.update(**self.item)
+      self.new_message = {'user': self.user, 'content': self.get_content()}
+      if self.chat_panel.items is None:
         #In case is the first comment
-        self.repeating_panel_1.items = [self.new_message]
+        self.chat_panel.items = [self.new_message]
       else:
         #Appends last comment to the repeating panel
-        self.repeating_panel_1.items = list(self.repeating_panel_1.items) + [self.new_message]
-      self.quill_1.content = None
-      self.file_loader_1.clear()
+        self.chat_panel.items = list(self.chat_panel.items) + [self.new_message]
+      self.text_message.content = None
       self.go_to_bottom()
       self.raise_event('x-send_event')
-      self.new_message = globals.get_comments_schema().copy()
+      # self.new_message = globals.get_comments_schema().copy()
       self.refresh_data_bindings()
+
+  def text_message_text_change(self, **event_args):
+    self.item['content'] = event_args['sender'].content
+
+  def get_content(self):
+    content = ''
+    for item in self.item['content']:
+      content += item['insert']
+    return content

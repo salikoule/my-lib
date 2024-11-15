@@ -4,7 +4,8 @@ components:
   properties: {background: '', border: '', foreground: '', item_template: Components.ChatBox.Content, items: null, role: card-25vh, spacing_above: none, spacing_below: none, tooltip: '', visible: true}
   type: RepeatingPanel
 - components:
-  - layout_properties: {full_width_row: true, grid_position: 'TKDLAD,XNKOVM'}
+  - event_bindings: {text_change: text_message_text_change}
+    layout_properties: {full_width_row: true, grid_position: 'TKDLAD,XNKOVM'}
     name: text_message
     properties: {height: '40', toolbar: false}
     type: form:dep_831y34sp6w9nu:Quill
