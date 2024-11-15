@@ -5,12 +5,10 @@ from datetime import datetime
 import anvil.media
 from ....Utils import convert
 
-
 class Content(ContentTemplate):
   def __init__(self, **properties):
     self.user = None
     self.init_components(**properties)
-    
 
   def form_show(self, **event_args):
     self.user = self.parent.parent.user

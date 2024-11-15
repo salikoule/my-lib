@@ -7,6 +7,7 @@ class ChatBox(ChatBoxTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.conversation = []
+    self.user = None
 
   @property
   def db(self):
