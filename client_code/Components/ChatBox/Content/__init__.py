@@ -8,9 +8,6 @@ from ....Utils import convert
 
 class Content(ContentTemplate):
   def __init__(self, **properties):
-    # self.init_db()
-    # self.init_defaults()
-    # Set Form properties and Data Bindings.
     self.user = None
     self.init_components(**properties)
     
