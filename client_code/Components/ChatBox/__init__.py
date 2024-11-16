@@ -68,7 +68,5 @@ class ChatBox(ChatBoxTemplate):
     self.item['content'] = event_args['sender'].content
 
   def get_content(self):
-    content = ''
-    for item in self.item['content']:
-      content += item['insert']
-    return content
+    content = ''.join([item['insert'] for item in self.item['content']])
+    return content.strip()
