@@ -44,7 +44,7 @@ components:
     background: theme:Primary Overlay 1
     border: ''
     col_spacing: tiny
-    col_widths: '{"CKWXRL":3,"XNKOVM":38}'
+    col_widths: '{"CKWXRL":8,"XNKOVM":45}'
     foreground: ''
     role: outlined-card
     spacing:
