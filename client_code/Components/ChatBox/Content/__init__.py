@@ -12,10 +12,10 @@ class Content(ContentTemplate):
 
   def form_show(self, **event_args):
     self.user = self.parent.parent.user
-    # self.format_datetime()
+    self.format_datetime()
     self.refresh_data_bindings()
 
   def format_datetime(self):
     """Formats the label text to pretty date"""
-    time = self.item['created'].strftime('%d/%m/%Y, %H:%M:%S')
-    self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(time, '%d/%m/%Y, %H:%M:%S'))
+    # time = self.item['created'].strftime('%d/%m/%Y, %H:%M:%S')
+    self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%d/%m/%Y, %H:%M:%S'))

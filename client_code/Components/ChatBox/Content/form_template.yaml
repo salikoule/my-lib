@@ -11,21 +11,29 @@ components:
 - components:
   - components:
     - components:
-      - data_bindings:
-        - {code: 'self.item[''user'']', property: text, writeback: false}
-        layout_properties: {full_width_row: true, grid_position: 'CEXFNW,PGHTAL'}
-        name: label_name
-        properties: {align: left, background: '', bold: true, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
-        type: Label
       - components:
-        - data_bindings: []
-          layout_properties: {full_width_row: true, grid_position: 'CEXFNW,JITMJE'}
-          name: label_datetime
-          properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:On Primary', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
+        - data_bindings:
+          - {code: 'self.item[''user'']', property: text, writeback: false}
+          name: label_name
+          properties: {align: left, background: '', bold: true, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
           type: Label
-        layout_properties: {full_width_row: true, grid_position: 'CEXFNW,PBBNRX'}
-        name: flow_panel_1
-        properties: {align: right, background: '', border: '', foreground: '', role: null, spacing: medium, spacing_above: none, spacing_below: none, tooltip: '', visible: true}
+        - layout_properties: {}
+          name: label_dot
+          properties:
+            spacing:
+              padding: ['0', null, '0', null]
+            spacing_above: none
+            spacing_below: none
+            text: ‧
+          type: Label
+        - data_bindings: []
+          layout_properties: {}
+          name: label_datetime
+          properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
+          type: Label
+        layout_properties: {full_width_row: true, grid_position: 'QWXUSM,VUWXCY'}
+        name: flow_panel_3
+        properties: {gap: tiny, spacing_above: none, spacing_below: none}
         type: FlowPanel
       data_bindings:
       - {code: '''theme:Surface Variant'' if self.user==self.item[''user''] else ''#d1d1d1''', property: background, writeback: false}
@@ -35,7 +43,7 @@ components:
         background: ''
         border: ''
         col_spacing: medium
-        col_widths: '{"PGHTAL":35,"PBBNRX":6}'
+        col_widths: '{}'
         foreground: ''
         role: tonal-card
         spacing:
