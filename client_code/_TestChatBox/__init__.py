@@ -16,5 +16,6 @@ class _TestChatBox(_TestChatBoxTemplate):
                     {'user': 'Dave', 'content': 'Christopher, I’m open to a conversation with you in early January.', 'created': dt},
                     {'user': 'AI', 'content': 'How about 10th January at 11am?', 'created': dt},
                    ]
+    print(conversation)
     self.chat_box_1.conversation = conversation
     self.chat_box_1.user = 'Christopher Harast'
