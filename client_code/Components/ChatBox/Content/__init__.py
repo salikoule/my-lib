@@ -22,7 +22,7 @@ class Content(ContentTemplate):
     self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
 
   def link_send_click(self, **event_args):
-    yes_clicked = confirm('Are you sure you want to send this message?')
-    if yes_clicked:
+    # yes_clicked = confirm('Are you sure you want to send this message?')
+    # if yes_clicked:
       self.item['user'] = self.user
       self.refresh_data_bindings()
