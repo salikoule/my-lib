@@ -50,7 +50,7 @@ class ChatBox(ChatBoxTemplate):
   def button_send_click(self, **event_args):
     """Adds the content of the quil to repeating_panel, database and sends email"""
     if 'content' in self.item:
-      created = datetime.utcnow().strftime("%d/%m/%Y, %H:%M:%S")
+      created = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
       self.new_message = {'user': self.user, 'content': self.get_content(), 'created': created}
       if self.chat_panel.items is None:
         #In case is the first comment
