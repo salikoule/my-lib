@@ -31,6 +31,13 @@ components:
           name: label_datetime
           properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
           type: Label
+        - data_bindings:
+          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          event_bindings: {click: link_send_click}
+          layout_properties: {}
+          name: link_send
+          properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none}
+          type: Link
         layout_properties: {full_width_row: true, grid_position: 'QWXUSM,VUWXCY'}
         name: flow_panel_3
         properties: {gap: tiny, spacing_above: none, spacing_below: none}
