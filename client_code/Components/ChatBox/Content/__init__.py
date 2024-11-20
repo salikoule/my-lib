@@ -19,7 +19,8 @@ class Content(ContentTemplate):
   def format_datetime(self):
     """Formats the label text to pretty date"""
     # time = self.item['created'].strftime('%d/%m/%Y, %H:%M:%S')
-    self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
+    if self.item.get('created'):
+      self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
 
   def link_send_click(self, **event_args):
     # yes_clicked = confirm('Are you sure you want to send this message?')
