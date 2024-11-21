@@ -68,4 +68,5 @@ properties:
 - {important: true, name: conversation, type: object}
 - {important: true, name: new_message, type: object}
 - {important: true, name: db, type: object}
-- {important: true, name: user, type: object}
+- {important: true, name: sender, type: object}
+- {important: true, name: recipient, type: object}

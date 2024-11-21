@@ -7,14 +7,28 @@ from ....Utils import convert
 
 class Content(ContentTemplate):
   def __init__(self, **properties):
-    self.user = None
+    self.sender = None
     self.init_components(**properties)
 
   def form_show(self, **event_args):
     self.parent_form = self.parent.parent
-    self.user = self.parent_form.user
+    self.sender = self.parent_form.sender
+    self.recipient = self.parent_form.recipient
+    self.update_photo()
     self.format_datetime()
     self.refresh_data_bindings()
+
+  def update_photo(self):
+    avatar = '_/theme/avatar.png'
+    if self.item['user'] == 'AI':
+      photo = '_/theme/ai-bot.png'
+    elif self.sender and self.item['user'] == self.sender['name']:
+      photo = self.sender.get('image', avatar)
+    elif self.recipient and self.item['user'] == self.recipient['name']:
+      photo = self.recipient.get('image', avatar)
+    else:
+      photo = avatar
+    self.image_left.source = photo
 
   def format_datetime(self):
     """Formats the label text to pretty date"""
@@ -25,5 +39,5 @@ class Content(ContentTemplate):
   def link_send_click(self, **event_args):
     # yes_clicked = confirm('Are you sure you want to send this message?')
     # if yes_clicked:
-      self.item['user'] = self.user
+      self.item['user'] = self.sender
       self.refresh_data_bindings()

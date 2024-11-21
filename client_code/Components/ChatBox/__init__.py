@@ -8,7 +8,8 @@ class ChatBox(ChatBoxTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.conversation = []
-    self.user = None
+    self.sender = None
+    self.recipient = None
 
   @property
   def db(self):
@@ -19,12 +20,20 @@ class ChatBox(ChatBoxTemplate):
     self._db = d
 
   @property
-  def user(self):
-    return self._user
+  def sender(self):
+    return self._sender
   
-  @user.setter
-  def user(self, u):
-    self._user = u
+  @sender.setter
+  def sender(self, s):
+    self._sender = s
+
+  @property
+  def recipient(self):
+    return self._recipient
+  
+  @recipient.setter
+  def recipient(self, r):
+    self._recipient = r
 
   @property
   def conversation(self):
@@ -51,7 +60,7 @@ class ChatBox(ChatBoxTemplate):
     """Adds the content of the quil to repeating_panel, database and sends email"""
     if 'content' in self.item:
       created = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
-      self.new_message = {'user': self.user, 'content': self.get_content(), 'created': created}
+      self.new_message = {'user': self.sender, 'content': self.get_content(), 'created': created}
       print(self.new_message['content'])
       if not self.new_message['content']:
         print('empty')

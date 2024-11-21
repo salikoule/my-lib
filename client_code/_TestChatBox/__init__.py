@@ -18,4 +18,5 @@ class _TestChatBox(_TestChatBoxTemplate):
                    ]
     # print(conversation)
     self.chat_box_1.conversation = conversation
-    self.chat_box_1.user = 'Christopher Harast'
+    self.chat_box_1.sender = {'name':'Christopher Harast', 'image': """https://www.shutterstock.com/image-photo/happy-puppy-welsh-corgi-14-600nw-2270841247.jpg"""}
+    self.chat_box_1.recipient = {'name':'Dave', 'image': """https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"""}

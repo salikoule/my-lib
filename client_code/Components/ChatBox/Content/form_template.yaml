@@ -1,12 +1,11 @@
 components:
-- data_bindings:
-  - {code: '''_/theme/ai-bot.png'' if self.item[''user''] == ''AI'' else ''_/theme/avatar.png''', property: source, writeback: false}
+- data_bindings: []
   layout_properties:
     col_widths: {}
     full_width_row: true
     grid_position: IQLHAL,OWAHRS
   name: image_left
-  properties: {background: '', border: '', display_mode: shrink_to_fit, foreground: '', height: '45', horizontal_align: center, role: null, source: _/theme/avatar.png, spacing_above: large, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
+  properties: {background: '', border: '', display_mode: shrink_to_fit, foreground: '', height: '45', horizontal_align: center, role: round-image, source: _/theme/avatar.png, spacing_above: large, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
   type: Image
 - components:
   - components:
@@ -38,12 +37,12 @@ components:
           name: link_send
           properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none}
           type: Link
-        layout_properties: {full_width_row: true, grid_position: 'QWXUSM,VUWXCY'}
+        layout_properties: {grid_position: 'FJHXHH,GSKQUH'}
         name: flow_panel_3
         properties: {gap: tiny, spacing_above: none, spacing_below: none}
         type: FlowPanel
       data_bindings:
-      - {code: '''theme:Surface Variant'' if self.user==self.item[''user''] else ''#d1d1d1''', property: background, writeback: false}
+      - {code: '''theme:Surface Variant'' if self.sender and self.sender.get(''name'') == self.item[''user''] else ''#d1d1d1''', property: background, writeback: false}
       layout_properties: {full_width_row: true, grid_position: 'YEGFDI,ODOUDN'}
       name: column_panel_3
       properties:

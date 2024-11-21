@@ -339,3 +339,4 @@ roles:
   name: bubble-left
 - {name: card-25vh}
 - {name: card-full}
+- {name: round-image}
