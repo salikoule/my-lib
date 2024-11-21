@@ -20,11 +20,11 @@ class Content(ContentTemplate):
 
   def update_photo(self):
     avatar = '_/theme/avatar.png'
-    if self.item['user'] == 'AI':
+    if self.item.get('user') == 'AI':
       photo = '_/theme/ai-bot.png'
-    elif self.sender and self.item['user'] == self.sender['name']:
+    elif self.sender and self.item.get('user') == self.sender['name']:
       photo = self.sender.get('image', avatar)
-    elif self.recipient and self.item['user'] == self.recipient['name']:
+    elif self.recipient and self.item.get('user') == self.recipient['name']:
       photo = self.recipient.get('image', avatar)
     else:
       photo = avatar
