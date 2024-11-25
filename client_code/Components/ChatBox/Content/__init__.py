@@ -37,7 +37,18 @@ class Content(ContentTemplate):
       self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
 
   def link_send_click(self, **event_args):
-    # yes_clicked = confirm('Are you sure you want to send this message?')
-    # if yes_clicked:
-      self.item['user'] = self.sender
+    yes_clicked = confirm('Are you sure you want to send this message?')
+    if yes_clicked:
+      self.item['user'] = self.sender['name']
+      self.item['created'] = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
+      self.update_photo()
+      self.format_datetime()
       self.refresh_data_bindings()
+
+  def link_repeat_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
+
+  def link_edit_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass

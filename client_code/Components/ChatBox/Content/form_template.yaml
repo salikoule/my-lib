@@ -37,6 +37,27 @@ components:
           name: link_send
           properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none}
           type: Link
+        - data_bindings:
+          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          event_bindings: {click: link_repeat_click}
+          layout_properties: {}
+          name: link_repeat
+          properties: {icon: 'fa:repeat', role: body, spacing_above: none, spacing_below: none, tooltip: Repeat}
+          type: Link
+        - data_bindings:
+          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          event_bindings: {click: link_repeat_click}
+          layout_properties: {}
+          name: link_edit
+          properties: {icon: 'fa:pencil', role: body, spacing_above: none, spacing_below: none, tooltip: Edit}
+          type: Link
+        - data_bindings:
+          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          event_bindings: {click: link_repeat_click}
+          layout_properties: {}
+          name: link_rate
+          properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate}
+          type: Link
         layout_properties: {grid_position: 'FJHXHH,GSKQUH'}
         name: flow_panel_3
         properties: {gap: tiny, spacing_above: none, spacing_below: none}
