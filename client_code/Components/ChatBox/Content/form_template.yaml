@@ -35,7 +35,7 @@ components:
           event_bindings: {click: link_send_click}
           layout_properties: {}
           name: link_send
-          properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none}
+          properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none, tooltip: Send message}
           type: Link
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
