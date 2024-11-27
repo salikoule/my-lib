@@ -74,6 +74,22 @@ class DatetimeHandler():
         """
         target_datetime = _datetime.astimezone(self.timezone)
         return target_datetime
+
+    def is_business_hours_workday(self, _datetime: datetime, start_time: str = '09:00', end_time: str = '17:00') -> bool:
+        """
+        Checks if the provided datetime is within business hours (9 AM - 5 PM) on a workday (Monday - Friday).
+
+        Args:
+            _datetime (datetime): The datetime to check.
+            start_time (str): The start of business hours. Defaults to '09:00'.
+            end_time (str): The end of business hours. Defaults to '17:00'.
+
+        Returns:
+            bool: True if the time is within business hours on a workday, False otherwise.
+        """
+        is_workday = _datetime.weekday() < 5
+        is_business_hours = start_time <= _datetime.strftime('%H:%M') <= end_time
+        return is_workday and is_business_hours
     
     def is_midnight_workday(self, _datetime: datetime) -> bool:
         """
