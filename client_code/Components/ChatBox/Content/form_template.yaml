@@ -47,6 +47,12 @@ components:
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
           event_bindings: {click: link_repeat_click}
+          name: link_prompt
+          properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt}
+          type: Link
+        - data_bindings:
+          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          event_bindings: {click: link_repeat_click}
           layout_properties: {}
           name: link_edit
           properties: {icon: 'fa:pencil', role: body, spacing_above: none, spacing_below: none, tooltip: Edit}
