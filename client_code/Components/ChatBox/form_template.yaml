@@ -62,6 +62,7 @@ custom_component: true
 events:
 - {default_event: true, name: send_event}
 - {name: generate_event}
+- {name: try_again}
 is_package: true
 properties:
 - {default_binding_prop: true, default_value: '', important: true, name: content, type: string}

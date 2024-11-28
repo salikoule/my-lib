@@ -39,27 +39,27 @@ components:
           type: Link
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_repeat_click}
+          event_bindings: {click: link_try_again_click}
           layout_properties: {}
-          name: link_repeat
-          properties: {icon: 'fa:repeat', role: body, spacing_above: none, spacing_below: none, tooltip: Repeat}
+          name: link_try_again
+          properties: {icon: 'fa:repeat', role: body, spacing_above: none, spacing_below: none, tooltip: Try again}
           type: Link
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_repeat_click}
+          event_bindings: {}
           name: link_prompt
           properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt}
           type: Link
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_repeat_click}
+          event_bindings: {}
           layout_properties: {}
           name: link_edit
           properties: {icon: 'fa:pencil', role: body, spacing_above: none, spacing_below: none, tooltip: Edit}
           type: Link
         - data_bindings:
           - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_repeat_click}
+          event_bindings: {}
           layout_properties: {}
           name: link_rate
           properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate}

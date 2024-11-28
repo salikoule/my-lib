@@ -86,3 +86,6 @@ class ChatBox(ChatBoxTemplate):
   def get_content(self):
     content = ''.join([item['insert'] for item in self.item['content']])
     return content.strip()
+
+  def try_again_event(self):
+    self.raise_event('try_again')
