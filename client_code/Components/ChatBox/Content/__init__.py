@@ -23,7 +23,6 @@ class Content(ContentTemplate):
     self.refresh_data_bindings()
 
   def is_hover(self, **event_args):
-    print('okok')
     event = event_args['event_type']
     self.hover = True if 'mouseenter' in event else False
     self.refresh_data_bindings()
@@ -42,7 +41,6 @@ class Content(ContentTemplate):
 
   def format_datetime(self):
     """Formats the label text to pretty date"""
-    # time = self.item['created'].strftime('%d/%m/%Y, %H:%M:%S')
     if self.item.get('created'):
       self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
       self.label_datetime.tooltip = datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S').strftime('%b %d, %Y %H:%M')
