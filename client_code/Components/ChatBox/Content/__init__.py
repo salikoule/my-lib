@@ -4,10 +4,14 @@ import anvil.server
 from datetime import datetime
 import anvil.media
 from ....Utils import convert
+from anvil_extras import augment
 
 class Content(ContentTemplate):
   def __init__(self, **properties):
     self.sender = None
+    self.edit = False
+    self.hover = False
+    augment.set_event_handler(self, 'hover', self.is_hover)
     self.init_components(**properties)
 
   def form_show(self, **event_args):
@@ -16,6 +20,12 @@ class Content(ContentTemplate):
     self.recipient = self.parent_form.recipient
     self.update_photo()
     self.format_datetime()
+    self.refresh_data_bindings()
+
+  def is_hover(self, **event_args):
+    print('okok')
+    event = event_args['event_type']
+    self.hover = True if 'mouseenter' in event else False
     self.refresh_data_bindings()
 
   def update_photo(self):
@@ -50,5 +60,12 @@ class Content(ContentTemplate):
     self.parent_form.try_again_event()
 
   def link_edit_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    pass
+    self.edit = True
+    self.refresh_data_bindings()
+
+  def link_cancel_click(self, **event_args):
+    self.edit = False
+    self.refresh_data_bindings()
+
+  def link_save_click(self, **event_args):
+    self.link_cancel_click()

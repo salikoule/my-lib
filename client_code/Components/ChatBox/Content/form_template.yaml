@@ -30,40 +30,57 @@ components:
           name: label_datetime
           properties: {align: right, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: body, spacing_above: none, spacing_below: none, text: '', tooltip: '', underline: false, visible: true}
           type: Label
-        - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_send_click}
+        - components:
+          - data_bindings: []
+            event_bindings: {click: link_send_click}
+            name: link_send
+            properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none, tooltip: Send message}
+            type: Link
+          - data_bindings: []
+            event_bindings: {click: link_try_again_click}
+            name: link_try_again
+            properties: {icon: 'fa:repeat', role: body, spacing_above: none, spacing_below: none, tooltip: Try again}
+            type: Link
+          - data_bindings: []
+            event_bindings: {}
+            name: link_prompt
+            properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt}
+            type: Link
+          - data_bindings: []
+            event_bindings: {click: link_edit_click}
+            name: link_edit
+            properties: {icon: 'fa:pencil', role: body, spacing_above: none, spacing_below: none, tooltip: Edit}
+            type: Link
+          - data_bindings: []
+            event_bindings: {}
+            name: link_rate
+            properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate}
+            type: Link
+          data_bindings:
+          - {code: 'self.item[''user''] == ''AI'' and not self.edit and self.hover', property: visible, writeback: false}
           layout_properties: {}
-          name: link_send
-          properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none, tooltip: Send message}
-          type: Link
-        - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {click: link_try_again_click}
+          name: tools_panel
+          properties: {gap: tiny, spacing_above: none, spacing_below: none}
+          type: FlowPanel
+        - components:
+          - data_bindings: []
+            event_bindings: {click: link_save_click}
+            layout_properties: {}
+            name: link_save
+            properties: {background: '', foreground: green, icon: 'fa:check', role: body, spacing_above: none, spacing_below: none, tooltip: Save}
+            type: Link
+          - data_bindings: []
+            event_bindings: {click: link_cancel_click}
+            layout_properties: {}
+            name: link_cancel
+            properties: {background: '', foreground: red, icon: 'fa:times', role: body, spacing_above: none, spacing_below: none, tooltip: Cancel}
+            type: Link
+          data_bindings:
+          - {code: self.edit, property: visible, writeback: false}
           layout_properties: {}
-          name: link_try_again
-          properties: {icon: 'fa:repeat', role: body, spacing_above: none, spacing_below: none, tooltip: Try again}
-          type: Link
-        - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {}
-          name: link_prompt
-          properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt}
-          type: Link
-        - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {}
-          layout_properties: {}
-          name: link_edit
-          properties: {icon: 'fa:pencil', role: body, spacing_above: none, spacing_below: none, tooltip: Edit}
-          type: Link
-        - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
-          event_bindings: {}
-          layout_properties: {}
-          name: link_rate
-          properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate}
-          type: Link
+          name: edit_panel
+          properties: {gap: tiny, spacing_above: none, spacing_below: none}
+          type: FlowPanel
         layout_properties: {grid_position: 'FJHXHH,GSKQUH'}
         name: flow_panel_3
         properties: {gap: tiny, spacing_above: none, spacing_below: none}
@@ -89,10 +106,18 @@ components:
       type: ColumnPanel
     - data_bindings:
       - {code: 'self.item[''content'']', property: content, writeback: false}
+      - {code: not self.edit, property: visible, writeback: false}
       layout_properties: {full_width_row: true, grid_position: 'WDPOAU,ZRWDMX'}
       name: rich_text_1
       properties: {format: plain_text, spacing_above: none, spacing_below: none}
       type: RichText
+    - data_bindings:
+      - {code: self.edit, property: visible, writeback: false}
+      - {code: 'self.item[''content'']', property: text, writeback: false}
+      layout_properties: {grid_position: 'YCGKAA,ESCRYH'}
+      name: text_area_1
+      properties: {auto_expand: true, role: outlined, spacing_above: small, spacing_below: none}
+      type: TextArea
     data_bindings: []
     layout_properties: {width: 630.1019711914063}
     name: column_panel_4
