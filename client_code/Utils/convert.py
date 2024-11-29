@@ -100,9 +100,13 @@ def datetime_to_pretty(time=False) -> str:
     if day_diff == 1:
         return "Yesterday"
     if day_diff < 7:
-        return str(day_diff) + " days ago"
+        days = day_diff // 7
+        return str(days) + f" day{'s' if days > 1 else ''} ago"
     if day_diff < 31:
-        return str(day_diff // 7) + " weeks ago"
+        weeks = day_diff // 7
+        return str(weeks) + f" week{'s' if weeks > 1 else ''} ago"
     if day_diff < 365:
-        return str(day_diff // 30) + " months ago"
-    return str(day_diff // 365) + " years ago"
+        months = day_diff // 30
+        return str(months) + f" month{'s' if months > 1 else ''} ago"
+    years = day_diff // 365
+    return str(years) + f" year{'s' if years > 1 else ''} ago"

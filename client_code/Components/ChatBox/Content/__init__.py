@@ -23,9 +23,10 @@ class Content(ContentTemplate):
     self.refresh_data_bindings()
 
   def is_hover(self, **event_args):
-    event = event_args['event_type']
-    self.hover = True if 'mouseenter' in event else False
-    self.refresh_data_bindings()
+    if not self.edit:
+      event = event_args['event_type']
+      self.hover = True if 'mouseenter' in event else False
+      self.refresh_data_bindings()
 
   def update_photo(self):
     avatar = '_/theme/avatar.png'
