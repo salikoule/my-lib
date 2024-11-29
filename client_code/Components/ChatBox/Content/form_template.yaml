@@ -43,8 +43,9 @@ components:
             type: Link
           - data_bindings: []
             event_bindings: {}
+            layout_properties: {}
             name: link_prompt
-            properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt}
+            properties: {icon: 'fa:window-maximize', role: body, spacing_above: none, spacing_below: none, tooltip: Prompt, visible: false}
             type: Link
           - data_bindings: []
             event_bindings: {click: link_edit_click}
@@ -53,8 +54,9 @@ components:
             type: Link
           - data_bindings: []
             event_bindings: {}
+            layout_properties: {}
             name: link_rate
-            properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate}
+            properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate, visible: false}
             type: Link
           data_bindings:
           - {code: 'self.item[''user''] == ''AI'' and not self.edit and self.hover', property: visible, writeback: false}
