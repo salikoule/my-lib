@@ -31,6 +31,19 @@ def get_date_now(timezone: str = DEFAULT_TIMEZONE) -> date:
     current_date = datetime.now(pytz.timezone(timezone)).date() # Get the current date in the specified timezone
     return current_date
 
+def get_todays_datetime(timezone: str = DEFAULT_TIMEZONE) -> date:
+    """
+    Get the today's datetime at midnight time in the specified timezone.
+
+    Args:
+        timezone (str): The timezone to use for getting the current date. Defaults to 'UTC' .
+
+    Returns:
+        date: The current date in the specified timezone.
+    """
+    current_date = datetime.now(pytz.timezone(timezone)).date() # Get the current date in the specified timezone
+    return datetime.combine(current_date, datetime.min.time())
+
 def convert_to_timezone(_datetime: datetime, timezone: str = DEFAULT_TIMEZONE) -> datetime:
     """
     Convert a datetime object to the specified timezone.
