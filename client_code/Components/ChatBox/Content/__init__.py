@@ -66,4 +66,7 @@ class Content(ContentTemplate):
     self.refresh_data_bindings()
 
   def link_save_click(self, **event_args):
+    self.item['edited'] = True
+    self.item['content'] = self.text_area_1.text
     self.link_cancel_click()
+    self.parent_form.content_edited_event(self.item)

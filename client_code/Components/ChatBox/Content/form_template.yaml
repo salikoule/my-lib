@@ -105,6 +105,12 @@ components:
         wrap_on: mobile
       type: ColumnPanel
     - data_bindings:
+      - {code: self.item.get('edited') and not self.edit and self.item.get('user') == 'AI', property: visible, writeback: false}
+      layout_properties: {grid_position: 'PSBZRB,XNKQVL'}
+      name: label_edited
+      properties: {font_size: 10, foreground: 'theme:Outline', role: body, spacing_above: none, spacing_below: none, text: Edited}
+      type: Label
+    - data_bindings:
       - {code: 'self.item[''content'']', property: content, writeback: false}
       - {code: not self.edit, property: visible, writeback: false}
       layout_properties: {full_width_row: true, grid_position: 'WDPOAU,ZRWDMX'}

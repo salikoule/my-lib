@@ -89,3 +89,6 @@ class ChatBox(ChatBoxTemplate):
 
   def try_again_event(self):
     self.raise_event('try_again')
+
+  def content_edited_event(self, item):
+    self.raise_event('edited', item = item)
