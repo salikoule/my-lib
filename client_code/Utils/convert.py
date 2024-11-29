@@ -2,13 +2,14 @@ import anvil.server
 import anvil.tz as tz
 from datetime import datetime
 import math
+from ..Global import DISPLAYED_DATETIME_FORMAT
 MILLINAMES = ['',' k',' m',' bn',' tn']
 
-def utc_to_local_time(utc_time, format="%H:%M:%S %d/%m/%Y") -> datetime or None:
+def utc_to_local_time(utc_time, format: str =DISPLAYED_DATETIME_FORMAT) -> datetime or None:
   """Converts the utc time to browser's timezone"""
   if utc_time is not None:
     if type(utc_time) is str:
-      utc_time = datetime.strptime(utc_time, "%d/%m/%Y, %H:%M:%S")
+      utc_time = datetime.strptime(utc_time, format)
     from_zone = tz.tzutc()
     to_zone = anvil.tz.tzlocal()
     utc_time = utc_time.replace(tzinfo=from_zone)
