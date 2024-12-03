@@ -101,8 +101,7 @@ def datetime_to_pretty(time=False) -> str:
     if day_diff == 1:
         return "Yesterday"
     if day_diff < 7:
-        days = day_diff // 7
-        return str(days) + f" day{'s' if days > 1 else ''} ago"
+        return str(day_diff) + f" day{'s' if day_diff > 1 else ''} ago"
     if day_diff < 31:
         weeks = day_diff // 7
         return str(weeks) + f" week{'s' if weeks > 1 else ''} ago"

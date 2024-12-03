@@ -5,7 +5,7 @@ components:
     full_width_row: true
     grid_position: IQLHAL,OWAHRS
   name: image_left
-  properties: {background: '', border: '', display_mode: shrink_to_fit, foreground: '', height: '45', horizontal_align: center, role: round-image, source: _/theme/avatar.png, spacing_above: large, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
+  properties: {background: '', border: '', display_mode: shrink_to_fit, foreground: '', height: 56.254974365234375, horizontal_align: center, role: round-image, source: _/theme/avatar.png, spacing_above: small, spacing_below: small, tooltip: '', vertical_align: center, visible: true}
   type: Image
 - components:
   - components:
@@ -165,6 +165,6 @@ components:
   type: FlowPanel
 container:
   event_bindings: {show: form_show}
-  properties: {col_spacing: tiny, col_widths: '{"OWAHRS":6,"UUEFCJ":49}'}
+  properties: {col_spacing: tiny, col_widths: '{"OWAHRS":4,"UUEFCJ":56}'}
   type: ColumnPanel
 is_package: true
