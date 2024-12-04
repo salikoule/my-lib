@@ -5,6 +5,7 @@ from datetime import datetime
 import anvil.media
 from ....Utils import convert
 from anvil_extras import augment
+from ....Global import STORED_DATETIME_FORMAT, DISPLAYED_DATETIME_FORMAT
 
 class Content(ContentTemplate):
   def __init__(self, **properties):
@@ -43,14 +44,14 @@ class Content(ContentTemplate):
   def format_datetime(self):
     """Formats the label text to pretty date"""
     if self.item.get('created'):
-      self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S'))
-      self.label_datetime.tooltip = datetime.strptime(self.item['created'], '%Y-%m-%d, %H:%M:%S').strftime('%b %d, %Y %H:%M')
+      self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], STORED_DATETIME_FORMAT))
+      self.label_datetime.tooltip = datetime.strptime(self.item['created'], STORED_DATETIME_FORMAT).strftime(DISPLAYED_DATETIME_FORMAT)
 
   def link_send_click(self, **event_args):
     yes_clicked = confirm('Are you sure you want to send this message?')
     if yes_clicked:
       self.item['user'] = self.sender['name']
-      self.item['created'] = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
+      self.item['created'] = datetime.utcnow().strftime(STORED_DATETIME_FORMAT)
       self.update_photo()
       self.format_datetime()
       self.refresh_data_bindings()
