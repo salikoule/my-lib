@@ -120,7 +120,7 @@ def get_date_n_working_days_before(_date: date = None, n: int = 0) -> date:
         _date -= timedelta(days=1)
         if _date.weekday() < 5:
             n -= 1
-    return _date
+    return _date.date()
 
 def get_date_n_days_before(_date: date = None, n: int = 0) -> date:
     """

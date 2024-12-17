@@ -140,7 +140,7 @@ class DatetimeHandler():
             _date -= timedelta(days=1)
             if _date.weekday() in weekdays:
                 count += 1
-        return _date
+        return _date.date()
 
     def get_date_n_days_before(self, _date: date = None, n: int = 0) -> date:
         """
