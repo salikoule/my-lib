@@ -11,4 +11,4 @@ class _TestHorizontalProgressBar(_TestHorizontalProgressBarTemplate):
     # Any code you write here will run before the form opens.
 
   def form_show(self, **event_args):
-    self.horizontal_progressbar_1.value = 20
+    self.horizontal_progressbar_1.value = 95
