@@ -55,6 +55,7 @@ class Content(ContentTemplate):
       self.update_photo()
       self.format_datetime()
       self.refresh_data_bindings()
+      self.parent_form.send_message_event()
 
   def link_try_again_click(self, **event_args):
     self.parent_form.try_again_event()

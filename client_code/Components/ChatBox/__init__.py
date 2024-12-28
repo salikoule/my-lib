@@ -92,3 +92,6 @@ class ChatBox(ChatBoxTemplate):
 
   def content_edited_event(self, item):
     self.raise_event('edited', item = item)
+
+  def send_message_event(self):
+    self.raise_event('send_event')    
