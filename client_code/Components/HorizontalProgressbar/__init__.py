@@ -12,12 +12,10 @@ class HorizontalProgressbar(HorizontalProgressbarTemplate):
 
   @property
   def value(self):
-      print("horizontal1",self._value)
       return self._value
 
   @value.setter
   def value(self,value_prop):
-      print("horizontal2",value_prop)
       self._value = value_prop
       try:
           anvil.js.call("HorizontalProgressbarSetter", self.obj, self._value)
