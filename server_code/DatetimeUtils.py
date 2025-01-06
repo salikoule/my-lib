@@ -193,3 +193,13 @@ def units_passed(_datetime: datetime, unit: str) -> datetime:
         return time_difference.seconds
     else:
         raise ValueError("Invalid unit. Please choose from 'days', 'hours', 'minutes', or 'seconds.")
+
+def get_current_monday() -> date:
+    """
+    Get the date of the most recent Monday.
+
+    Returns:
+        date: The date of the most recent Monday.
+    """
+    today = get_date_now()
+    return today - timedelta(days=today.weekday())
