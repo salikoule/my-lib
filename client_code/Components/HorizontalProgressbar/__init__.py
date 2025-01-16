@@ -20,5 +20,5 @@ class HorizontalProgressbar(HorizontalProgressbarTemplate):
       try:
           anvil.js.call("HorizontalProgressbarSetter", self.obj, self._value)
       except:
-          print("component not ready")
+          # print("component not ready")
           pass
