@@ -203,3 +203,16 @@ def get_current_monday() -> date:
     """
     today = get_date_now()
     return today - timedelta(days=today.weekday())
+
+def get_date_difference(date1: date, date2: date) -> int:
+    """
+    Get the difference in days between two dates.
+
+    Args:
+        date1 (date): The first date.
+        date2 (date): The second date.
+
+    Returns:
+        int: The difference in days between the two dates.
+    """
+    return abs((date1 - date2).days)
