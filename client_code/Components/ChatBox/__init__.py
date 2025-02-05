@@ -58,27 +58,27 @@ class ChatBox(ChatBoxTemplate):
 
   def button_send_click(self, **event_args):
     """Adds the content of the quil to repeating_panel, database and sends email"""
-    if 'content' in self.item:
-      created = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
-      self.new_message = {'user': self.sender, 'content': self.get_content(), 'created': created}
-      print(self.new_message['content'])
-      if not self.new_message['content']:
-        print('empty')
-        self.raise_event('x-generate_event')
-      if self.chat_panel.items is None:
-        #In case is the first comment
-        self.chat_panel.items = [self.new_message]
-      else:
-        #Appends last comment to the repeating panel
-        self.chat_panel.items = list(self.chat_panel.items) + [self.new_message]
+    # if 'content' in self.item:
+    #   created = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
+    #   self.new_message = {'user': self.sender, 'content': self.get_content(), 'created': created}
+    #   print(self.new_message['content'])
+    #   if not self.new_message['content']:
+    #     print('empty')
+    #     self.raise_event('x-generate_event')
+    #   if self.chat_panel.items is None:
+    #     #In case is the first comment
+    #     self.chat_panel.items = [self.new_message]
+    #   else:
+    #     #Appends last comment to the repeating panel
+    #     self.chat_panel.items = list(self.chat_panel.items) + [self.new_message]
       
-      self.text_message.content = None
-      self.go_to_bottom()
-      self.raise_event('x-send_event')
-      # self.new_message = globals.get_comments_schema().copy()
-      self.refresh_data_bindings()
-    else:
-      self.raise_event('x-generate_event')
+    #   self.text_message.content = None
+    #   self.go_to_bottom()
+    #   self.raise_event('x-send_event')
+    #   # self.new_message = globals.get_comments_schema().copy()
+    #   self.refresh_data_bindings()
+    # else:
+    self.raise_event('generate_event')
 
   def text_message_text_change(self, **event_args):
     self.item['content'] = event_args['sender'].content
