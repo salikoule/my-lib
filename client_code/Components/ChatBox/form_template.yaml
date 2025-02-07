@@ -4,14 +4,20 @@ components:
   properties: {background: '', border: '', foreground: '', item_template: Components.ChatBox.Content, items: null, role: card-25vh, spacing_above: none, spacing_below: none, tooltip: '', visible: true}
   type: RepeatingPanel
 - components:
-  - event_bindings: {text_change: text_message_text_change}
+  - event_bindings: {change: text_message_change}
     layout_properties: {full_width_row: true, grid_position: 'TKDLAD,XNKOVM'}
     name: text_message
-    properties: {height: '40', toolbar: false}
-    type: form:dep_831y34sp6w9nu:Quill
+    properties:
+      auto_expand: true
+      height: '45'
+      margin: ['0', null, '0', null]
+      role: outlined
+      spacing_above: none
+      spacing_below: none
+    type: TextArea
   - data_bindings: []
     event_bindings: {click: button_send_click}
-    layout_properties: {grid_position: 'TKDLAD,CKWXRL'}
+    layout_properties: {full_width_row: true, grid_position: 'TKDLAD,CKWXRL'}
     name: button_send
     properties:
       align: center
@@ -28,7 +34,7 @@ components:
       role: filled-button
       spacing:
         padding: ['0', '12', '0', '12']
-      spacing_above: small
+      spacing_above: medium
       spacing_below: small
       text: ''
       tooltip: Send message

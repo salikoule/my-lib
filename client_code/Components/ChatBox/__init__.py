@@ -78,7 +78,8 @@ class ChatBox(ChatBoxTemplate):
     #   # self.new_message = globals.get_comments_schema().copy()
     #   self.refresh_data_bindings()
     # else:
-    self.raise_event('generate_event')
+    content = self.text_message.text
+    self.raise_event('generate_event', content=content)
 
   def text_message_text_change(self, **event_args):
     self.item['content'] = event_args['sender'].content
