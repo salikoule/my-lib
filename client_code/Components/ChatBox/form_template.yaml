@@ -10,6 +10,7 @@ components:
     properties:
       auto_expand: true
       height: '45'
+      italic: false
       margin: ['0', null, '0', null]
       placeholder: ''
       role: outlined
