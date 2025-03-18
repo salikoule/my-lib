@@ -18,5 +18,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: _TestHorizontalProgressBar, type: form}
+startup: {module: _TestTreant, type: form}
 startup_form: null
