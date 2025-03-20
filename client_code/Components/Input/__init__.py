@@ -4,7 +4,7 @@ import anvil.server
 from anvil_extras.MultiSelectDropDown import MultiSelectDropDown
 
 # add value properties for convenience
-# DatePicker.value = property(lambda self: self.date, lambda self, val: setattr(self, "date", val))
+DatePicker.value = property(lambda self: self.date, lambda self, val: setattr(self, "date", val))
 TextBox.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
 DropDown.value = property(lambda self: self.selected_value, lambda self, val: setattr(self, "selected_value", val))
 TextArea.value = property(lambda self: self.text, lambda self, val: setattr(self, "text", val))
