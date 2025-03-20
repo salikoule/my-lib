@@ -155,6 +155,19 @@ class DatetimeHandler():
         """
         return _date - timedelta(days=n)
 
+    def get_date_n_days_after(self, _date: date = None, n: int = 0) -> date:
+        """
+        Gets the date that is `n` days after the given date.
+
+        Args:
+            date (date): The starting date. Defaults to None.
+            n (int): The number of days to go back. Defaults to 0.
+
+        Returns:
+            date: The date that is `n` days before the given date.
+        """
+        return _date + timedelta(days=n)
+
     def get_all_timezones(self) -> list:
         """
         Get a list of all available timezones.

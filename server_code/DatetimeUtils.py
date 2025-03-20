@@ -137,6 +137,21 @@ def get_date_n_days_before(_date: date = None, n: int = 0) -> date:
         _date = get_date_now()
     return _date - timedelta(days=n)
 
+def get_date_n_days_after(_date: date = None, n: int = 0) -> date:
+    """
+    Gets the date that is `n` days after the given date.
+
+    Args:
+        date (date): The starting date. Defaults to None.
+        n (int): The number of days to go back. Defaults to 0.
+
+    Returns:
+        date: The date that is `n` days after the given date.
+    """
+    if _date is None:
+        _date = get_date_now()
+    return _date + timedelta(days=n)
+
 def get_all_timezones() -> list:
     """
     Get a list of all available timezones.
