@@ -165,5 +165,5 @@ class ChartJS(ChartJSTemplate):
 
   def chart_reset(self, **event_args):
     """Render the chart everytime the window sizing is changed."""
-    print("rendering....")
+    # print("rendering....")
     self.chart.render()
