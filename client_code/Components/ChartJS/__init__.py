@@ -153,7 +153,8 @@ class ChartJS(ChartJSTemplate):
     self._config['options']['plugins']['tooltip'] = t
     
   def form_show(self, **event_args):
-    self.plot_chart()
+    # self.plot_chart()
+    pass
 
   def plot_chart(self):
     self.clear()
