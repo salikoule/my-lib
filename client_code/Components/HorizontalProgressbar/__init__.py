@@ -18,7 +18,6 @@ class HorizontalProgressbar(HorizontalProgressbarTemplate):
   def value(self,value_prop):
       
       try:
-          print(value_prop)
           self._value = value_prop if value_prop <= 100 else 100
           anvil.js.call("HorizontalProgressbarSetter", self.obj, self._value)
       except:
