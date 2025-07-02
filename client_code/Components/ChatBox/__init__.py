@@ -79,7 +79,8 @@ class ChatBox(ChatBoxTemplate):
     #   self.refresh_data_bindings()
     # else:
     content = self.text_message.text
-    self.raise_event('generate_event', content=content)
+    if content and content.strip() != '':
+      self.raise_event('generate_event', content=content)
 
   def text_message_text_change(self, **event_args):
     self.item['content'] = event_args['sender'].content
@@ -96,3 +97,6 @@ class ChatBox(ChatBoxTemplate):
 
   def send_message_event(self):
     self.raise_event('send_event')    
+
+  def ai_switch_change(self, **event_args):
+    self.raise_event('ai_switch_change') 
