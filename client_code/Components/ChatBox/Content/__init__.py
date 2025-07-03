@@ -73,3 +73,7 @@ class Content(ContentTemplate):
     self.item['content'] = self.text_area_1.text
     self.link_cancel_click()
     self.parent_form.content_edited_event(self.item)
+
+  def dlt_link_click(self, **event_args):
+    self.remove_from_parent()
+    self.parent_form.delete_message(self.item)

@@ -98,5 +98,8 @@ class ChatBox(ChatBoxTemplate):
   def send_message_event(self):
     self.raise_event('send_event')    
 
+  def delete_message(self, item):
+    self.raise_event('delete_message', item = item)    
+
   def ai_switch_change(self, **event_args):
     self.raise_event('ai_switch_change') 
