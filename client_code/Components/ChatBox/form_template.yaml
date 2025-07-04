@@ -7,7 +7,7 @@ components:
   - event_bindings: {change: ai_switch_change}
     layout_properties: {full_width_row: true, grid_position: 'PQFAZM,GKYZBS VOGYVB,TWSQDR'}
     name: ai_switch
-    properties: {spacing_above: none, spacing_below: none, text_post: ✨}
+    properties: {spacing_above: none, spacing_below: none, text_post: ✨, tooltip: Prompt AI to generate reply}
     type: form:dep_831y34sp6w9nu:Switch
   - event_bindings: {change: text_message_change}
     layout_properties: {full_width_row: true, grid_position: 'PQFAZM,GKYZBS TKDLAD,XNKOVM'}
@@ -74,8 +74,10 @@ container:
   type: ColumnPanel
 custom_component: true
 events:
-- {default_event: true, name: send_event}
-- {name: generate_event}
+- {default_event: true, name: approved_message}
+- name: send_button_click
+  parameters:
+  - {name: content}
 - {name: try_again}
 - name: edited
   parameters:

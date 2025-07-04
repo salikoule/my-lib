@@ -58,29 +58,9 @@ class ChatBox(ChatBoxTemplate):
 
   def button_send_click(self, **event_args):
     """Adds the content of the quil to repeating_panel, database and sends email"""
-    # if 'content' in self.item:
-    #   created = datetime.utcnow().strftime('%Y-%m-%d, %H:%M:%S')
-    #   self.new_message = {'user': self.sender, 'content': self.get_content(), 'created': created}
-    #   print(self.new_message['content'])
-    #   if not self.new_message['content']:
-    #     print('empty')
-    #     self.raise_event('x-generate_event')
-    #   if self.chat_panel.items is None:
-    #     #In case is the first comment
-    #     self.chat_panel.items = [self.new_message]
-    #   else:
-    #     #Appends last comment to the repeating panel
-    #     self.chat_panel.items = list(self.chat_panel.items) + [self.new_message]
-      
-    #   self.text_message.content = None
-    #   self.go_to_bottom()
-    #   self.raise_event('x-send_event')
-    #   # self.new_message = globals.get_comments_schema().copy()
-    #   self.refresh_data_bindings()
-    # else:
     content = self.text_message.text
     if content and content.strip() != '':
-      self.raise_event('generate_event', content=content)
+      self.raise_event('send_button_click', content=content)
 
   def text_message_text_change(self, **event_args):
     self.item['content'] = event_args['sender'].content
@@ -95,8 +75,8 @@ class ChatBox(ChatBoxTemplate):
   def content_edited_event(self, item):
     self.raise_event('edited', item = item)
 
-  def send_message_event(self):
-    self.raise_event('send_event')    
+  def approved_message_event(self):
+    self.raise_event('approved_message')    
 
   def delete_message(self, item):
     self.raise_event('delete_message', item = item)    
