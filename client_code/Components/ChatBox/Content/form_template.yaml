@@ -89,7 +89,7 @@ components:
         type: FlowPanel
       - components:
         - data_bindings:
-          - {code: 'self.item[''user''] == ''AI''', property: visible, writeback: false}
+          - {code: 'self.item.get(''status'') not in [''Sent'', ''Received'']', property: visible, writeback: false}
           event_bindings: {click: dlt_link_click}
           layout_properties: {}
           name: dlt_link
