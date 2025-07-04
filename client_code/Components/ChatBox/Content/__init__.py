@@ -47,7 +47,7 @@ class Content(ContentTemplate):
       self.label_datetime.text = convert.datetime_to_pretty(datetime.strptime(self.item['created'], STORED_DATETIME_FORMAT))
       self.label_datetime.tooltip = datetime.strptime(self.item['created'], STORED_DATETIME_FORMAT).strftime(DISPLAYED_DATETIME_FORMAT)
 
-  def link_send_click(self, **event_args):
+  def link_approve_click(self, **event_args):
     yes_clicked = confirm('Are you sure you want to send this message?')
     if yes_clicked:
       self.item['user'] = self.sender['name']

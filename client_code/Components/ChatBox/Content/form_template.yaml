@@ -32,9 +32,10 @@ components:
           type: Label
         - components:
           - data_bindings: []
-            event_bindings: {click: link_send_click}
-            name: link_send
-            properties: {icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none, tooltip: Send message}
+            event_bindings: {click: link_approve_click}
+            layout_properties: {}
+            name: link_approve
+            properties: {icon: 'fa:check-circle-o', role: body, spacing_above: none, spacing_below: none, tooltip: Approve and Send message}
             type: Link
           - data_bindings: []
             event_bindings: {click: link_try_again_click}
@@ -59,7 +60,7 @@ components:
             properties: {icon: 'fa:star', role: body, spacing_above: none, spacing_below: none, tooltip: Rate, visible: false}
             type: Link
           data_bindings:
-          - {code: 'self.item[''user''] == ''AI'' and not self.edit and self.hover', property: visible, writeback: false}
+          - {code: 'self.item[''status''] not in [''Sent'', ''Received''] and not self.edit and self.hover', property: visible, writeback: false}
           layout_properties: {}
           name: tools_panel
           properties: {gap: tiny, spacing_above: none, spacing_below: none}
@@ -89,15 +90,21 @@ components:
         type: FlowPanel
       - components:
         - data_bindings:
+          - {code: self.item.get('status') == 'Sending', property: visible, writeback: false}
+          layout_properties: {}
+          name: sending
+          properties: {foreground: 'theme:Primary', icon: 'fa:paper-plane', role: body, spacing_above: none, spacing_below: none, tooltip: Message to be sent}
+          type: Label
+        - data_bindings:
           - {code: 'self.item.get(''status'') not in [''Sent'', ''Received'']', property: visible, writeback: false}
           event_bindings: {click: dlt_link_click}
           layout_properties: {}
           name: dlt_link
-          properties: {background: '', foreground: '', icon: 'fa:trash', role: body, spacing_above: none, spacing_below: none, tooltip: Cancel}
+          properties: {background: '', foreground: '', icon: 'fa:trash', role: body, spacing_above: none, spacing_below: none, tooltip: Delete Message}
           type: Link
         layout_properties: {grid_position: 'FJHXHH,FYVITG'}
         name: flow_panel_1
-        properties: {align: right, spacing_above: none, spacing_below: none}
+        properties: {align: right, gap: small, spacing_above: none, spacing_below: none}
         type: FlowPanel
       data_bindings:
       - {code: '''theme:Surface Variant'' if self.sender and self.sender.get(''name'') == self.item[''user''] else ''#d1d1d1''', property: background, writeback: false}
