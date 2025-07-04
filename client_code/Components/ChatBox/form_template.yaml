@@ -35,7 +35,7 @@ components:
       font: ''
       font_size: null
       foreground: ''
-      icon: fa:paper-plane
+      icon: fa:arrow-circle-up
       icon_align: left
       italic: false
       role: filled-button
