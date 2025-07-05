@@ -95,5 +95,5 @@ properties:
 - {important: true, name: sender, type: object}
 - {important: true, name: recipient, type: object}
 toolbox_item:
-  hidden: true
-  icon: {dark: 'asset:designer_icons/png-transparent-computer-icons-conversation-online-chat-symbol-encapsulated-postscript-chat-box-miscellaneous-angle-rectangle.png', light: 'asset:designer_icons/png-transparent-computer-icons-conversation-online-chat-symbol-encapsulated-postscript-chat-box-miscellaneous-angle-rectangle.png'}
+  hidden: false
+  icon: {dark: 'asset:designer_icons/png-transparent-chat-box-blue-chat-bubble-icon (1).png', light: 'asset:designer_icons/png-transparent-chat-box-blue-chat-bubble-icon (1).png'}
