@@ -85,6 +85,18 @@ def is_midnight_workday(_datetime: datetime) -> bool:
     """
     return True if _datetime.strftime('%H') == '00' and _datetime.weekday() < 5 else False
 
+def is_midnight(_datetime: datetime) -> bool:
+  """
+    Checks if the provided datetime is midnight (00:00), and workday (Monday - Friday).
+
+    Args:
+        _datetime (datetime): The datetime to check.
+
+    Returns:
+        bool: True if the time is midnight and it's a weekday, False otherwise.
+    """
+  return True if _datetime.strftime('%H') == '00' else False
+
 def get_last_n_days(_date: date, n: int = 30, date_format: str = DEFAULT_DATE_FORMAT) -> list:
     """
     Generate a list of the last 'n' days from a given date.
