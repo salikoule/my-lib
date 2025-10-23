@@ -1,17 +1,9 @@
 components:
-- event_bindings: {click: button_click}
-  layout_properties: {full_width_row: true, grid_position: 'QEMKQM,XYNFOO'}
-  name: button
-  properties:
-    icon: fa:clipboard
-    role: null
-    spacing:
-      padding: ['0', '10', '0', '10']
-    spacing_above: none
-    spacing_below: none
-    text: ''
-    tooltip: Copy
-  type: Button
+- event_bindings: {click: copy_link_click}
+  layout_properties: {full_width_row: true, grid_position: 'SHQOBL,GUVLXY'}
+  name: copy_link
+  properties: {align: center, icon: 'mi:file_copy', tooltip: Copy to clipboard}
+  type: form:dep_yyj00n2m17db:_Components.Link
 container:
   properties: {spacing_above: none, spacing_below: none}
   type: ColumnPanel

@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestChatBoxTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 from datetime import datetime
 

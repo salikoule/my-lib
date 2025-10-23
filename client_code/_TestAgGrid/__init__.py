@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestAgGridTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 
 class _TestAgGrid(_TestAgGridTemplate):

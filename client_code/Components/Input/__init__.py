@@ -1,5 +1,6 @@
 from ._anvil_designer import InputTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 from anvil_extras.MultiSelectDropDown import MultiSelectDropDown
 

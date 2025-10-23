@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestHorizontalProgressBarTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 
 

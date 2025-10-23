@@ -1,5 +1,6 @@
 from ._anvil_designer import AgGridTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 import anvil.js
 import datetime

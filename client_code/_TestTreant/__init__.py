@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestTreantTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 from functools import partial
 from anvil.js.window import window

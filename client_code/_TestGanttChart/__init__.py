@@ -1,5 +1,6 @@
 from ._anvil_designer import _TestGanttChartTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 from ..Utils import nanoid
 from .Form1 import Form1

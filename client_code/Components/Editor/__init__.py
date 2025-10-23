@@ -1,5 +1,6 @@
 from ._anvil_designer import EditorTemplate
 from anvil import *
+import m3.components as m3
 import anvil.server
 from anvil.js.window import EditorJS
 from anvil.js.window import Header
