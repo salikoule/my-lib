@@ -3,6 +3,9 @@ dependencies:
 - dep_id: dep_831y34sp6w9nu
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
   version: {version_tag: v3.4.2}
+- dep_id: dep_yyj00n2m17db
+  resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme, package_name: m3}
+  version: {version_tag: v1.2.6}
 metadata: {title: Craftify Custom Components}
 name: Craftify
 native_deps:
