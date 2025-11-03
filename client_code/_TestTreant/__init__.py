@@ -55,6 +55,7 @@ class _TestTreant(_TestTreantTemplate):
     alert('Hello')
 
   def button_1_click(self, **event_args):
+    alert()
     self.node['children'].append({'text': { 'name': "Third child" }})
     self.treant_js_1.node_structure = self.node
     #self.form_show()
