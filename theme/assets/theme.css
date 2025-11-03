@@ -1099,7 +1099,7 @@ height: 300px;
   margin-bottom: -8px;
 }
 /*------------------------*/
-.anvil-role-card-full {
+/* .anvil-role-card-full {
   height:auto;
   max-height:150%;
   overflow:auto;  
@@ -1109,21 +1109,21 @@ height: 300px;
   /* 2dp */ /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
 }
 /* full_width_row sections go full bleed */
-.column-panel.anvil-role-card-full > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
+/* .column-panel.anvil-role-card-full > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
   margin-left: -12px;
   margin-right: -12px;
   width: initial;
   max-width: initial;
   min-height: 100%;
-}
+} */
 
 /* If the first row of a card is a full_width_row, it goes to the top */
-.column-panel.anvil-role-card-full > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+/* .column-panel.anvil-role-card-full > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
   margin-top: -8px;
-}
-.column-panel.anvil-role-card-full > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
+} */
+/* .column-panel.anvil-role-card-full > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
   margin-bottom: -8px;
-}
+} */ 
 
 .anvil-role-bubble-left {
 	position: relative;
