@@ -22,5 +22,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: _TestTreant, type: form}
+startup: {module: _TestGanttChart, type: form}
 startup_form: null
